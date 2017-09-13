@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Secretaire</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idsecretaire</th>
+                <td>{{ secretaire.idsecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Nomsecretaire</th>
+                <td>{{ secretaire.nomsecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Prenomsecretaire</th>
+                <td>{{ secretaire.prenomsecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Telsecretaire</th>
+                <td>{{ secretaire.telsecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Emailsecretaire</th>
+                <td>{{ secretaire.emailsecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Sexesecretaire</th>
+                <td>{{ secretaire.sexesecretaire }}</td>
+            </tr>
+            <tr>
+                <th>Addressesecretaire</th>
+                <td>{{ secretaire.addressesecretaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('secretaire_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('secretaire_edit', { 'id': secretaire.idsecretaire }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

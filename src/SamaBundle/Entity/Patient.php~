@@ -1,0 +1,75 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Patient
+ *
+ * @ORM\Table(name="patient")
+ * @ORM\Entity
+ */
+class Patient
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPatient", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpatient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomPatient", type="string", length=45, nullable=false)
+     */
+    private $nompatient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenomPatient", type="string", length=45, nullable=false)
+     */
+    private $prenompatient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexePatient", type="string", length=45, nullable=true)
+     */
+    private $sexepatient;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datenaissPatient", type="date", nullable=true)
+     */
+    private $datenaisspatient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="addressePatient", type="string", length=45, nullable=true)
+     */
+    private $addressepatient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telPatient", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $telpatient;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="agePatient", type="integer", nullable=true)
+     */
+    private $agepatient;
+
+
+}
+

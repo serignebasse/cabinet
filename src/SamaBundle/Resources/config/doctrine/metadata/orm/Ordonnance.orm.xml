@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Ordonnance" table="ordonnance">
+    <indexes>
+      <index name="numPatient_idx" columns="idPatient_ord"/>
+      <index name="fk_Medecin_ord_idx" columns="idMedecin_ord"/>
+    </indexes>
+    <id name="idordonn" type="integer" column="idOrdonn">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateordonn" type="date" column="dateOrdonn" nullable="true"/>
+    <field name="medicament" type="text" column="medicament" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idmedecinOrd" target-entity="Medecin" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMedecin_ord" referenced-column-name="idMedecin"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpatientOrd" target-entity="Patient" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPatient_ord" referenced-column-name="idPatient"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

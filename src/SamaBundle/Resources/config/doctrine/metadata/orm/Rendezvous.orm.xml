@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Rendezvous" table="rendezvous">
+    <indexes>
+      <index name="fkPat_RV_idx" columns="idPatient_rv"/>
+      <index name="fkMedecin_RV_idx" columns="idMedecin_rv"/>
+      <index name="fkSecretaire_RV_idx" columns="idSecretaire_rv"/>
+    </indexes>
+    <id name="idrv" type="integer" column="idRv">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="frequencerv" type="string" column="frequenceRv" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idsecretaireRv" target-entity="Secretaire" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSecretaire_rv" referenced-column-name="idSecretaire"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idmedecinRv" target-entity="Medecin" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMedecin_rv" referenced-column-name="idMedecin"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpatientRv" target-entity="Patient" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPatient_rv" referenced-column-name="idPatient"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

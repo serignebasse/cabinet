@@ -1,0 +1,82 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medecin
+ *
+ * @ORM\Table(name="medecin")
+ * @ORM\Entity
+ */
+class Medecin
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idMedecin", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomMedecin", type="string", length=45, nullable=false)
+     */
+    private $nommedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenomMedecin", type="string", length=45, nullable=false)
+     */
+    private $prenommedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="addresseMedecin", type="string", length=45, nullable=true)
+     */
+    private $addressemedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="emailMedecin", type="string", length=25, nullable=true)
+     */
+    private $emailmedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telMedecin", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $telmedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexeMedecin", type="string", length=15, nullable=true)
+     */
+    private $sexemedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cabinetMedecin", type="string", length=45, nullable=true)
+     */
+    private $cabinetmedecin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="specialiteMedecin", type="string", length=30, nullable=true)
+     */
+    private $specialitemedecin;
+
+
+}
+

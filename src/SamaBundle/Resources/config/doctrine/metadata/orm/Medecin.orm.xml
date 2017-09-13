@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Medecin" table="medecin">
+    <id name="idmedecin" type="integer" column="idMedecin">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nommedecin" type="string" column="nomMedecin" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prenommedecin" type="string" column="prenomMedecin" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="addressemedecin" type="string" column="addresseMedecin" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="emailmedecin" type="string" column="emailMedecin" length="25" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="telmedecin" type="decimal" column="telMedecin" precision="10" scale="0" nullable="true"/>
+    <field name="sexemedecin" type="string" column="sexeMedecin" length="15" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="cabinetmedecin" type="string" column="cabinetMedecin" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="specialitemedecin" type="string" column="specialiteMedecin" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

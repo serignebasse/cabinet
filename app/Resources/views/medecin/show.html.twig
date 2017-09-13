@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Medecin</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idmedecin</th>
+                <td>{{ medecin.idmedecin }}</td>
+            </tr>
+            <tr>
+                <th>Nommedecin</th>
+                <td>{{ medecin.nommedecin }}</td>
+            </tr>
+            <tr>
+                <th>Prenommedecin</th>
+                <td>{{ medecin.prenommedecin }}</td>
+            </tr>
+            <tr>
+                <th>Addressemedecin</th>
+                <td>{{ medecin.addressemedecin }}</td>
+            </tr>
+            <tr>
+                <th>Emailmedecin</th>
+                <td>{{ medecin.emailmedecin }}</td>
+            </tr>
+            <tr>
+                <th>Telmedecin</th>
+                <td>{{ medecin.telmedecin }}</td>
+            </tr>
+            <tr>
+                <th>Sexemedecin</th>
+                <td>{{ medecin.sexemedecin }}</td>
+            </tr>
+            <tr>
+                <th>Cabinetmedecin</th>
+                <td>{{ medecin.cabinetmedecin }}</td>
+            </tr>
+            <tr>
+                <th>Specialitemedecin</th>
+                <td>{{ medecin.specialitemedecin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('medecin_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('medecin_edit', { 'id': medecin.idmedecin }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

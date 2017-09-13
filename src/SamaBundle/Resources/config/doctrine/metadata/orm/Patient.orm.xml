@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Patient" table="patient">
+    <id name="idpatient" type="integer" column="idPatient">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nompatient" type="string" column="nomPatient" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="prenompatient" type="string" column="prenomPatient" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="sexepatient" type="string" column="sexePatient" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="datenaisspatient" type="date" column="datenaissPatient" nullable="true"/>
+    <field name="addressepatient" type="string" column="addressePatient" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="telpatient" type="decimal" column="telPatient" precision="10" scale="0" nullable="true"/>
+    <field name="agepatient" type="integer" column="agePatient" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

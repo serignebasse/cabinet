@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rendezvous list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idrv</th>
+                <th>Date</th>
+                <th>Frequencerv</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rendezvous in rendezvouses %}
+            <tr>
+                <td><a href="{{ path('rendezvous_show', { 'id': rendezvous.idrv }) }}">{{ rendezvous.idrv }}</a></td>
+                <td>{% if rendezvous.date %}{{ rendezvous.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ rendezvous.frequencerv }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('rendezvous_show', { 'id': rendezvous.idrv }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('rendezvous_edit', { 'id': rendezvous.idrv }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rendezvous_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,63 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rendezvous
+ *
+ * @ORM\Table(name="rendezvous", indexes={@ORM\Index(name="fkPat_RV_idx", columns={"idPatient_rv"}), @ORM\Index(name="fkMedecin_RV_idx", columns={"idMedecin_rv"}), @ORM\Index(name="fkSecretaire_RV_idx", columns={"idSecretaire_rv"})})
+ * @ORM\Entity
+ */
+class Rendezvous
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idRv", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idrv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frequenceRv", type="string", length=45, nullable=true)
+     */
+    private $frequencerv;
+
+    /**
+     * @var \Patient
+     *
+     * @ORM\ManyToOne(targetEntity="Patient")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPatient_rv", referencedColumnName="idPatient")
+     * })
+     */
+    private $idpatientRv;
+
+    /**
+     * @var \Medecin
+     *
+     * @ORM\ManyToOne(targetEntity="Medecin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idMedecin_rv", referencedColumnName="idMedecin")
+     * })
+     */
+    private $idmedecinRv;
+
+    /**
+     * @var \Secretaire
+     *
+     * @ORM\ManyToOne(targetEntity="Secretaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idSecretaire_rv", referencedColumnName="idSecretaire")
+     * })
+     */
+    private $idsecretaireRv;
+
+
+}
+

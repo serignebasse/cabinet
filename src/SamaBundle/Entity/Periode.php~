@@ -1,0 +1,55 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Periode
+ *
+ * @ORM\Table(name="periode", indexes={@ORM\Index(name="fkRV_periode_idx", columns={"idRv_per"}), @ORM\Index(name="fkSecretaire_periode_idx", columns={"idSecretaire_per"})})
+ * @ORM\Entity
+ */
+class Periode
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="heure", type="decimal", precision=10, scale=0, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $heure;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $date;
+
+    /**
+     * @var \Rendezvous
+     *
+     * @ORM\ManyToOne(targetEntity="Rendezvous")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idRv_per", referencedColumnName="idRv")
+     * })
+     */
+    private $idrvPer;
+
+    /**
+     * @var \Secretaire
+     *
+     * @ORM\ManyToOne(targetEntity="Secretaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idSecretaire_per", referencedColumnName="idSecretaire")
+     * })
+     */
+    private $idsecretairePer;
+
+
+}
+

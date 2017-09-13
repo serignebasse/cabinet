@@ -1,0 +1,43 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Payement
+ *
+ * @ORM\Table(name="payement", indexes={@ORM\Index(name="FKPatient_Pay_idx", columns={"idPatient_pay"})})
+ * @ORM\Entity
+ */
+class Payement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPayement", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpayement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="montant", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $montant;
+
+    /**
+     * @var \Patient
+     *
+     * @ORM\ManyToOne(targetEntity="Patient")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPatient_pay", referencedColumnName="idPatient")
+     * })
+     */
+    private $idpatientPay;
+
+
+}
+

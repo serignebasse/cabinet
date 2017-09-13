@@ -1,0 +1,60 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ordonnance
+ *
+ * @ORM\Table(name="ordonnance", indexes={@ORM\Index(name="numPatient_idx", columns={"idPatient_ord"}), @ORM\Index(name="fk_Medecin_ord_idx", columns={"idMedecin_ord"})})
+ * @ORM\Entity
+ */
+class Ordonnance
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idOrdonn", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idordonn;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateOrdonn", type="date", nullable=true)
+     */
+    private $dateordonn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="medicament", type="text", length=65535, nullable=true)
+     */
+    private $medicament;
+
+    /**
+     * @var \Patient
+     *
+     * @ORM\ManyToOne(targetEntity="Patient")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPatient_ord", referencedColumnName="idPatient")
+     * })
+     */
+    private $idpatientOrd;
+
+    /**
+     * @var \Medecin
+     *
+     * @ORM\ManyToOne(targetEntity="Medecin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idMedecin_ord", referencedColumnName="idMedecin")
+     * })
+     */
+    private $idmedecinOrd;
+
+
+}
+

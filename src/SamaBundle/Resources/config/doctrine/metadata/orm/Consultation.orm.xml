@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Consultation" table="consultation">
+    <indexes>
+      <index name="fkPatient_Cons_idx" columns="idPatient_cons"/>
+      <index name="fkMedecin_cons_idx" columns="idMedecin_cons"/>
+    </indexes>
+    <id name="idconsult" type="integer" column="idConsult">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateconsult" type="date" column="dateConsult" nullable="true"/>
+    <field name="diagnostic" type="text" column="diagnostic" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idmedecinCons" target-entity="Medecin" fetch="LAZY">
+      <join-columns>
+        <join-column name="idMedecin_cons" referenced-column-name="idMedecin"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpatientCons" target-entity="Patient" fetch="LAZY">
+      <join-columns>
+        <join-column name="idPatient_cons" referenced-column-name="idPatient"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

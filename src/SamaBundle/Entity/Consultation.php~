@@ -1,0 +1,60 @@
+<?php
+
+namespace SamaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Consultation
+ *
+ * @ORM\Table(name="consultation", indexes={@ORM\Index(name="fkPatient_Cons_idx", columns={"idPatient_cons"}), @ORM\Index(name="fkMedecin_cons_idx", columns={"idMedecin_cons"})})
+ * @ORM\Entity
+ */
+class Consultation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idConsult", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idconsult;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateConsult", type="date", nullable=true)
+     */
+    private $dateconsult;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="diagnostic", type="text", length=65535, nullable=true)
+     */
+    private $diagnostic;
+
+    /**
+     * @var \Patient
+     *
+     * @ORM\ManyToOne(targetEntity="Patient")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPatient_cons", referencedColumnName="idPatient")
+     * })
+     */
+    private $idpatientCons;
+
+    /**
+     * @var \Medecin
+     *
+     * @ORM\ManyToOne(targetEntity="Medecin")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idMedecin_cons", referencedColumnName="idMedecin")
+     * })
+     */
+    private $idmedecinCons;
+
+
+}
+

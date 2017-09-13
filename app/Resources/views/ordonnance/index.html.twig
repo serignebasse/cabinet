@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ordonnance list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idordonn</th>
+                <th>Dateordonn</th>
+                <th>Medicament</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ordonnance in ordonnances %}
+            <tr>
+                <td><a href="{{ path('ordonnance_show', { 'id': ordonnance.idordonn }) }}">{{ ordonnance.idordonn }}</a></td>
+                <td>{% if ordonnance.dateordonn %}{{ ordonnance.dateordonn|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ ordonnance.medicament }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ordonnance_show', { 'id': ordonnance.idordonn }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ordonnance_edit', { 'id': ordonnance.idordonn }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ordonnance_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

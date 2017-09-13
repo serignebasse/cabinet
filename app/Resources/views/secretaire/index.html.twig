@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Secretaire list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idsecretaire</th>
+                <th>Nomsecretaire</th>
+                <th>Prenomsecretaire</th>
+                <th>Telsecretaire</th>
+                <th>Emailsecretaire</th>
+                <th>Sexesecretaire</th>
+                <th>Addressesecretaire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for secretaire in secretaires %}
+            <tr>
+                <td><a href="{{ path('secretaire_show', { 'id': secretaire.idsecretaire }) }}">{{ secretaire.idsecretaire }}</a></td>
+                <td>{{ secretaire.nomsecretaire }}</td>
+                <td>{{ secretaire.prenomsecretaire }}</td>
+                <td>{{ secretaire.telsecretaire }}</td>
+                <td>{{ secretaire.emailsecretaire }}</td>
+                <td>{{ secretaire.sexesecretaire }}</td>
+                <td>{{ secretaire.addressesecretaire }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('secretaire_show', { 'id': secretaire.idsecretaire }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('secretaire_edit', { 'id': secretaire.idsecretaire }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('secretaire_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

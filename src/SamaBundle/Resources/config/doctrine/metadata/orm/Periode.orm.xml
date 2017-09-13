@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Periode" table="periode">
+    <indexes>
+      <index name="fkRV_periode_idx" columns="idRv_per"/>
+      <index name="fkSecretaire_periode_idx" columns="idSecretaire_per"/>
+    </indexes>
+    <id name="heure" type="decimal" column="heure"/>
+    <id name="date" type="date" column="date"/>
+    <many-to-one field="idsecretairePer" target-entity="Secretaire" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSecretaire_per" referenced-column-name="idSecretaire"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idrvPer" target-entity="Rendezvous" fetch="LAZY">
+      <join-columns>
+        <join-column name="idRv_per" referenced-column-name="idRv"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

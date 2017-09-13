@@ -1,0 +1,4 @@
+services:
+#    sama.example:
+#        class: SamaBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

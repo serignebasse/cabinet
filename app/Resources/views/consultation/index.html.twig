@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Consultation list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idconsult</th>
+                <th>Dateconsult</th>
+                <th>Diagnostic</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for consultation in consultations %}
+            <tr>
+                <td><a href="{{ path('consultation_show', { 'id': consultation.idconsult }) }}">{{ consultation.idconsult }}</a></td>
+                <td>{% if consultation.dateconsult %}{{ consultation.dateconsult|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ consultation.diagnostic }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('consultation_show', { 'id': consultation.idconsult }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('consultation_edit', { 'id': consultation.idconsult }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('consultation_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

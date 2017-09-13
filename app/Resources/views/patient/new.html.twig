@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <h1>Fiche Patient </h1>
+
+    {{ form_start(form) }}
+
+    {{ form_widget(form)}}
+
+        <input type="submit" value="Valider" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('patient_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
