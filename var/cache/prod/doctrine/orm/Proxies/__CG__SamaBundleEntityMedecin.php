@@ -64,10 +64,10 @@ class Medecin extends \SamaBundle\Entity\Medecin implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'idmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'nommedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'prenommedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'addressemedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'emailmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'telmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'sexemedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'cabinetmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'specialitemedecin'];
+            return ['__isInitialized__', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'id', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'nom', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'prenom', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'addresse', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'email', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'telephone', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'sexe', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'cabinet', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'specialite'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'idmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'nommedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'prenommedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'addressemedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'emailmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'telmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'sexemedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'cabinetmedecin', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'specialitemedecin'];
+        return ['__isInitialized__', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'id', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'nom', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'prenom', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'addresse', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'email', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'telephone', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'sexe', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'cabinet', '' . "\0" . 'SamaBundle\\Entity\\Medecin' . "\0" . 'specialite'];
     }
 
     /**
@@ -176,192 +176,192 @@ class Medecin extends \SamaBundle\Entity\Medecin implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
-    public function getIdmedecin()
+    public function getId()
     {
         if ($this->__isInitialized__ === false) {
-            return (int)  parent::getIdmedecin();
+            return (int)  parent::getId();
         }
 
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdmedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
-        return parent::getIdmedecin();
+        return parent::getId();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setNommedecin($nommedecin)
+    public function setNom($nom)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNommedecin', [$nommedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNom', [$nom]);
 
-        return parent::setNommedecin($nommedecin);
+        return parent::setNom($nom);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getNommedecin()
+    public function getNom()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNommedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNom', []);
 
-        return parent::getNommedecin();
+        return parent::getNom();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setPrenommedecin($prenommedecin)
+    public function setPrenom($prenom)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPrenommedecin', [$prenommedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPrenom', [$prenom]);
 
-        return parent::setPrenommedecin($prenommedecin);
+        return parent::setPrenom($prenom);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPrenommedecin()
+    public function getPrenom()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrenommedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrenom', []);
 
-        return parent::getPrenommedecin();
+        return parent::getPrenom();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setAddressemedecin($addressemedecin)
+    public function setAddresse($addresse)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAddressemedecin', [$addressemedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAddresse', [$addresse]);
 
-        return parent::setAddressemedecin($addressemedecin);
+        return parent::setAddresse($addresse);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getAddressemedecin()
+    public function getAddresse()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAddressemedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAddresse', []);
 
-        return parent::getAddressemedecin();
+        return parent::getAddresse();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setEmailmedecin($emailmedecin)
+    public function setEmail($email)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmailmedecin', [$emailmedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', [$email]);
 
-        return parent::setEmailmedecin($emailmedecin);
+        return parent::setEmail($email);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getEmailmedecin()
+    public function getEmail()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmailmedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', []);
 
-        return parent::getEmailmedecin();
+        return parent::getEmail();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setTelmedecin($telmedecin)
+    public function setTelephone($telephone)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTelmedecin', [$telmedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTelephone', [$telephone]);
 
-        return parent::setTelmedecin($telmedecin);
+        return parent::setTelephone($telephone);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getTelmedecin()
+    public function getTelephone()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTelmedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTelephone', []);
 
-        return parent::getTelmedecin();
+        return parent::getTelephone();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setSexemedecin($sexemedecin)
+    public function setSexe($sexe)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSexemedecin', [$sexemedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSexe', [$sexe]);
 
-        return parent::setSexemedecin($sexemedecin);
+        return parent::setSexe($sexe);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSexemedecin()
+    public function getSexe()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSexemedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSexe', []);
 
-        return parent::getSexemedecin();
+        return parent::getSexe();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setCabinetmedecin($cabinetmedecin)
+    public function setCabinet($cabinet)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCabinetmedecin', [$cabinetmedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCabinet', [$cabinet]);
 
-        return parent::setCabinetmedecin($cabinetmedecin);
+        return parent::setCabinet($cabinet);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getCabinetmedecin()
+    public function getCabinet()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCabinetmedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCabinet', []);
 
-        return parent::getCabinetmedecin();
+        return parent::getCabinet();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setSpecialitemedecin($specialitemedecin)
+    public function setSpecialite($specialite)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSpecialitemedecin', [$specialitemedecin]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSpecialite', [$specialite]);
 
-        return parent::setSpecialitemedecin($specialitemedecin);
+        return parent::setSpecialite($specialite);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSpecialitemedecin()
+    public function getSpecialite()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSpecialitemedecin', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSpecialite', []);
 
-        return parent::getSpecialitemedecin();
+        return parent::getSpecialite();
     }
 
 }

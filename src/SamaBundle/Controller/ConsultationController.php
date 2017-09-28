@@ -122,6 +122,30 @@ class ConsultationController extends Controller
         return $this->redirectToRoute('consultation_index');
     }
 
+
+    /**
+     * Lists date.
+     *
+     * @Route("/", name="consultation_recherche")
+     * @Method("POST")
+     */
+    public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $mot=$request->get('mot');
+
+        $consultations = $em->getRepository('SamaBundle:Consultation')->findBy(
+            array('decision'=> $mot)
+        );
+
+        return $this->render('consultation/index.html.twig', array(
+            'consultations' =>$consultations
+        ));
+
+    }
+
+
+
     /**
      * Creates a form to delete a Consultation entity.
      *

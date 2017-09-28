@@ -1,0 +1,12 @@
+{% extends 'basse.html.twig' %}
+{% block body %}
+    <div class="content-wrapper">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <p> Login et mot de passe correct</p>
+        <p> Bonjour</p>
+
+        <p><a href="{{ path('utilisateur_page') }}"></a></p>
+        <p><a href="{{ path('admin_page') }}"> </a></p>
+
+    </div>
+{% endblock %}

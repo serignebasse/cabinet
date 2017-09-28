@@ -3,6 +3,10 @@
 namespace SamaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,14 +19,19 @@ class MedecinType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nommedecin')
-            ->add('prenommedecin')
-            ->add('addressemedecin')
-            ->add('emailmedecin')
-            ->add('telmedecin')
-            ->add('sexemedecin')
-            ->add('cabinetmedecin')
-            ->add('specialitemedecin')
+            ->add('nom',textType::class)
+            ->add('prenom',textType::class)
+            ->add('addresse',textType::class)
+            ->add('email',EmailType::class)
+            ->add('telephone',numberType::class)
+            ->add('sexe',choiceType::class, array(
+                'label'    => 'Sexe',
+                'choices' => array('Homme' => 'Homme', 'Femme'=> 'Femme'),
+                'expanded' => true,
+                'multiple' => false,
+            ))
+            ->add('cabinet',textType::class)
+            ->add('specialite',textType::class)
         ;
     }
     

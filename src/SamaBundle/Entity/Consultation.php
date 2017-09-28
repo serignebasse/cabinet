@@ -19,14 +19,14 @@ class Consultation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idconsult;
+    private $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateConsult", type="date", nullable=true)
      */
-    private $dateconsult;
+    private $date;
 
     /**
      * @var string
@@ -36,59 +36,73 @@ class Consultation
     private $diagnostic;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="traitement", type="text", length=65535, nullable=true)
+     */
+    private $traitement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="decision", type="text", length=65535, nullable=true)
+     */
+    private $decision;
+
+    /**
      * @var \Patient
      *
      * @ORM\ManyToOne(targetEntity="Patient")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idPatient_cons", referencedColumnName="idPatient")
+     *   @ORM\JoinColumn(name="idPatient_cons", referencedColumnName="idPatient", nullable=false)
      * })
      */
-    private $idpatientCons;
+    private $patient;
 
     /**
      * @var \Medecin
      *
      * @ORM\ManyToOne(targetEntity="Medecin")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idMedecin_cons", referencedColumnName="idMedecin")
+     *   @ORM\JoinColumn(name="idMedecin_cons", referencedColumnName="idMedecin", nullable=false)
      * })
      */
-    private $idmedecinCons;
+    private $medecin;
 
 
 
     /**
-     * Get idconsult
+     * Get id
      *
      * @return integer
      */
-    public function getIdconsult()
+    public function getId()
     {
-        return $this->idconsult;
+        return $this->id;
     }
 
     /**
-     * Set dateconsult
+     * Set date
      *
-     * @param \DateTime $dateconsult
+     * @param \DateTime $date
      *
      * @return Consultation
      */
-    public function setDateconsult($dateconsult)
+    public function setDate($date)
     {
-        $this->dateconsult = $dateconsult;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get dateconsult
+     * Get date
      *
      * @return \DateTime
      */
-    public function getDateconsult()
+    public function getDate()
     {
-        return $this->dateconsult;
+        return $this->date;
     }
 
     /**
@@ -116,50 +130,99 @@ class Consultation
     }
 
     /**
-     * Set idpatientCons
+     * Set traitement
+     *
+     * @param string $traitement
+     *
+     * @return Consultation
+     */
+    public function setTraitement($traitement)
+    {
+        $this->traitement = $traitement;
+
+        return $this;
+    }
+
+    /**
+     * Get traitement
+     *
+     * @return string
+     */
+    public function getTraitement()
+    {
+        return $this->traitement;
+    }
+
+    /**
+     * Set decision
+     *
+     * @param string $decision
+     *
+     * @return Consultation
+     */
+    public function setDecision($decision)
+    {
+        $this->decision = $decision;
+
+        return $this;
+    }
+
+    /**
+     * Get decision
+     *
+     * @return string
+     */
+    public function getDecision()
+    {
+        return $this->decision;
+    }
+
+
+    /**
+     * Set patient
      *
      * @param \SamaBundle\Entity\Patient $idpatientCons
      *
      * @return Consultation
      */
-    public function setIdpatientCons(\SamaBundle\Entity\Patient $idpatientCons = null)
+    public function setPatient(\SamaBundle\Entity\Patient $patient)
     {
-        $this->idpatientCons = $idpatientCons;
+        $this->patient = $patient;
 
         return $this;
     }
 
     /**
-     * Get idpatientCons
+     * Get patient
      *
      * @return \SamaBundle\Entity\Patient
      */
-    public function getIdpatientCons()
+    public function getPatient()
     {
-        return $this->idpatientCons;
+        return $this->patient;
     }
 
     /**
-     * Set idmedecinCons
+     * Set medecin
      *
-     * @param \SamaBundle\Entity\Medecin $idmedecinCons
+     * @param \SamaBundle\Entity\Medecin $medecin
      *
      * @return Consultation
      */
-    public function setIdmedecinCons(\SamaBundle\Entity\Medecin $idmedecinCons = null)
+    public function setMedecin(\SamaBundle\Entity\Medecin $medecin)
     {
-        $this->idmedecinCons = $idmedecinCons;
+        $this->medecin = $medecin;
 
         return $this;
     }
 
     /**
-     * Get idmedecinCons
+     * Get medecin
      *
      * @return \SamaBundle\Entity\Medecin
      */
-    public function getIdmedecinCons()
+    public function getMedecin()
     {
-        return $this->idmedecinCons;
+        return $this->medecin;
     }
 }

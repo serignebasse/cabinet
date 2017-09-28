@@ -1,43 +1,62 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Medecin list</h1>
+    <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2" method="post" action="{{ path('medecin_recherche')}}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="nom,prénom,téléphone..." name="mot">
+                        <span class="input-group-btn">
+                  <button class="btn btn-success" type="button" >
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </nav>
 
-    <table>
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <h1>Liste des médecins</h1>
+
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
-                <th>Idmedecin</th>
-                <th>Nommedecin</th>
-                <th>Prenommedecin</th>
-                <th>Addressemedecin</th>
-                <th>Emailmedecin</th>
-                <th>Telmedecin</th>
-                <th>Sexemedecin</th>
-                <th>Cabinetmedecin</th>
-                <th>Specialitemedecin</th>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Addresse</th>
+                <th>Email</th>
+                <th>Télèphone</th>
+                <th>Sexe</th>
+                <th>Cabinet</th>
+                <th>Spécialité</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for medecin in medecins %}
             <tr>
-                <td><a href="{{ path('medecin_show', { 'id': medecin.idmedecin }) }}">{{ medecin.idmedecin }}</a></td>
-                <td>{{ medecin.nommedecin }}</td>
-                <td>{{ medecin.prenommedecin }}</td>
-                <td>{{ medecin.addressemedecin }}</td>
-                <td>{{ medecin.emailmedecin }}</td>
-                <td>{{ medecin.telmedecin }}</td>
-                <td>{{ medecin.sexemedecin }}</td>
-                <td>{{ medecin.cabinetmedecin }}</td>
-                <td>{{ medecin.specialitemedecin }}</td>
+                <td><a href="{{ path('medecin_show', { 'id': medecin.id }) }}">{{ medecin.id}}</a></td>
+                <td>{{ medecin.nom }}</td>
+                <td>{{ medecin.prenom}}</td>
+                <td>{{ medecin.addresse }}</td>
+                <td>{{ medecin.email }}</td>
+                <td>{{ medecin.telephone }}</td>
+                <td>{{ medecin.sexe }}</td>
+                <td>{{ medecin.cabinet }}</td>
+                <td>{{ medecin.specialite }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('medecin_show', { 'id': medecin.idmedecin }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('medecin_edit', { 'id': medecin.idmedecin }) }}">edit</a>
-                        </li>
+                           <a class="btn btn-secondary btn-sm" href="{{ path('medecin_show',
+                            { 'id': medecin.id }) }}" role="button">voir</a>
+
+                            <a class="btn btn-success btn-sm" href="{{ path('medecin_edit',
+                            { 'id': medecin.id }) }}" role="button">modifier</a>
                     </ul>
                 </td>
             </tr>
@@ -46,8 +65,9 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('medecin_new') }}">Create a new entry</a>
-        </li>
+
+            <a class="btn btn-success btn-sm" href="{{ path('medecin_new') }}" role="button">Ajouter Madecin</a>
+
     </ul>
+</div>
 {% endblock %}

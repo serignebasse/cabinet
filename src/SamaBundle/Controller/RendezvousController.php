@@ -122,6 +122,28 @@ class RendezvousController extends Controller
         return $this->redirectToRoute('rendezvous_index');
     }
 
+
+    /**
+     * Lists date.
+     *
+     * @Route("/", name="rendezvous_recherche")
+     * @Method("POST")
+     */
+    public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $mot=$request->get('mot');
+        $rendezvouses = $em->getRepository('SamaBundle:Rendezvous')->findBy(
+            array('date'=> $mot)
+        );
+
+            return $this->render('rendezvous/index.html.twig', array(
+                'rendezvouses' =>$rendezvouses
+            ));
+
+    }
+
+
     /**
      * Creates a form to delete a Rendezvous entity.
      *

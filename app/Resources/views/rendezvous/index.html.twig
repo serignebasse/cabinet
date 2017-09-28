@@ -1,31 +1,50 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Rendezvous list</h1>
 
-    <table>
+    <nav class="navbar navbar-expand-lg ">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2" method="post" action="{{ path('rendezvous_recherche')}}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="date..." name="mot">
+                        <span class="input-group-btn">
+                  <button class="btn btn-success" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+<div class="content-wrapper ">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Liste des rendez-vous </h1>
+
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
-                <th>Idrv</th>
-                <th>Date</th>
-                <th>Frequencerv</th>
+                <th>Id</th>
+                <th>Date du rendez-vous</th>
+                <th>Fréquence</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for rendezvous in rendezvouses %}
             <tr>
-                <td><a href="{{ path('rendezvous_show', { 'id': rendezvous.idrv }) }}">{{ rendezvous.idrv }}</a></td>
-                <td>{% if rendezvous.date %}{{ rendezvous.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ rendezvous.frequencerv }}</td>
+                <td><a href="{{ path('rendezvous_show', { 'id': rendezvous.id }) }}">{{ rendezvous.id }}</a></td>
+                <td>{% if rendezvous.date %}{{ rendezvous.date|date('d-M-y H:m') }}{% endif %}</td>
+                <td>{{ rendezvous.frequence }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('rendezvous_show', { 'id': rendezvous.idrv }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('rendezvous_edit', { 'id': rendezvous.idrv }) }}">edit</a>
-                        </li>
+                            <a class="btn btn-secondary btn-sm" href="{{ path('rendezvous_show',
+                            { 'id': rendezvous.id }) }}" role="button">voir</a>
+
+                            <a class="btn btn-success btn-sm" href="{{ path('rendezvous_edit',
+                            { 'id': rendezvous.id }) }}" role="button">modifier</a>
                     </ul>
                 </td>
             </tr>
@@ -34,8 +53,8 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('rendezvous_new') }}">Create a new entry</a>
-        </li>
+            <a class="btn btn-success btn-sm" href="{{ path('rendezvous_new') }}"
+               role="button">Ajouter un rendez-vous</a>
     </ul>
+</div>
 {% endblock %}

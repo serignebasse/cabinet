@@ -1,36 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Rendezvous</h1>
+<div class="content-wrapper ">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
-    <table>
+    <h1>Rendez-vous</h1>
+
+    <table class="table table-responsive table-hover">
         <tbody>
             <tr>
-                <th>Idrv</th>
-                <td>{{ rendezvous.idrv }}</td>
+                <th>Id</th>
+                <td>{{ rendezvous.id }}</td>
             </tr>
             <tr>
-                <th>Date</th>
-                <td>{% if rendezvous.date %}{{ rendezvous.date|date('Y-m-d') }}{% endif %}</td>
+                <th>Date du rendez-vous</th>
+                <td>{% if rendezvous.date %}{{ rendezvous.date|date('d-M-y H:m') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Frequencerv</th>
-                <td>{{ rendezvous.frequencerv }}</td>
+                <th>Fréquence</th>
+                <td>{{ rendezvous.frequence }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('rendezvous_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('rendezvous_edit', { 'id': rendezvous.idrv }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+
+            <a class="btn btn-success btn-sm" href="{{ path('rendezvous_index') }}"
+            role="button">Retour</a>
+
+            <a class="btn btn-success btn-sm" href="{{ path('rendezvous_edit', { 'id': rendezvous.id })
+            }}" role="button">Modifier</a>
     </ul>
+    <ul>
+            {{ form_start(delete_form) }}
+                <input  class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+
+    </ul>
+</div>
 {% endblock %}

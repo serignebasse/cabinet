@@ -2,21 +2,18 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 
 {% block body %}
-
+<div class="content-wrapper col-lg-3">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
     <h1>Fiche Patient </h1>
-
     {{ form_start(form) }}
-
     {{ form_widget(form)}}
-
-        <input type="submit" value="Valider" />
-    {{ form_end(form) }}
-
     <ul>
-        <li>
-            <a href="{{ path('patient_index') }}">Back to the list</a>
-        </li>
+        <input class="btn btn-success btn-sm" type="submit" value="Valider" />
+    {{ form_end(form) }}
+         <a class="btn btn-success btn-sm" href="{{ path('patient_index')
+            }}" role="button">Retour</a>
+
     </ul>
+</div>
 {% endblock %}

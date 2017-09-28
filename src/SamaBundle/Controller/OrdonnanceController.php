@@ -2,6 +2,7 @@
 
 namespace SamaBundle\Controller;
 
+use SamaBundle\Entity\Medicament;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;

@@ -1,31 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ordonnance list</h1>
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
-    <table>
+    <h1>Liste des ordonnances</h1>
+
+    <table  class="table table-sm table-hover">
         <thead>
             <tr>
-                <th>Idordonn</th>
-                <th>Dateordonn</th>
-                <th>Medicament</th>
+                <th>Id</th>
+                <th>Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for ordonnance in ordonnances %}
             <tr>
-                <td><a href="{{ path('ordonnance_show', { 'id': ordonnance.idordonn }) }}">{{ ordonnance.idordonn }}</a></td>
-                <td>{% if ordonnance.dateordonn %}{{ ordonnance.dateordonn|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ ordonnance.medicament }}</td>
+                <td><a href="{{ path('ordonnance_show', { 'id': ordonnance.id }) }}">{{ ordonnance.id}}</a></td>
+                <td>{% if ordonnance.date %}{{ ordonnance.date|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('ordonnance_show', { 'id': ordonnance.idordonn }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('ordonnance_edit', { 'id': ordonnance.idordonn }) }}">edit</a>
-                        </li>
+                            <a class="btn btn-secondary btn-sm" href="{{ path('ordonnance_show',
+                            { 'id': ordonnance.id }) }}" role="button">voir</a>
+                            <a class="btn btn-success btn-sm" href="{{ path('ordonnance_edit',
+                            { 'id': ordonnance.id }) }}" role="button">modifier</a>
+
                     </ul>
                 </td>
             </tr>
@@ -34,8 +34,7 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('ordonnance_new') }}">Create a new entry</a>
-        </li>
+            <a class="btn btn-success btn-sm" href="{{ path('ordonnance_new') }}" role="button">Nouveau ordonnance</a>
     </ul>
+</div>
 {% endblock %}

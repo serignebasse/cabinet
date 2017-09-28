@@ -19,19 +19,22 @@ class Ordonnance
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idordonn;
+    private $id;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateOrdonn", type="date", nullable=true)
      */
-    private $dateordonn;
+    private $date;
 
     /**
-     * @var string
+     * @var \Medicament
      *
-     * @ORM\Column(name="medicament", type="text", length=65535, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Medicament")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idMedicament_ord", referencedColumnName="id")
+     * })
      */
     private $medicament;
 
@@ -40,75 +43,75 @@ class Ordonnance
      *
      * @ORM\ManyToOne(targetEntity="Patient")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idPatient_ord", referencedColumnName="idPatient")
+     *   @ORM\JoinColumn(name="idPatient_ord", referencedColumnName="idPatient", nullable=false)
      * })
      */
-    private $idpatientOrd;
+    private $patient;
 
     /**
      * @var \Medecin
      *
      * @ORM\ManyToOne(targetEntity="Medecin")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idMedecin_ord", referencedColumnName="idMedecin")
+     *   @ORM\JoinColumn(name="idMedecin_ord", referencedColumnName="idMedecin", nullable=false)
      * })
      */
-    private $idmedecinOrd;
+    private $medecin;
 
 
 
     /**
-     * Get idordonn
+     * Get id
      *
      * @return integer
      */
-    public function getIdordonn()
+    public function getId()
     {
-        return $this->idordonn;
+        return $this->id;
     }
 
     /**
-     * Set dateordonn
+     * Set date
      *
-     * @param \DateTime $dateordonn
+     * @param \DateTime $date
      *
      * @return Ordonnance
      */
-    public function setDateordonn($dateordonn)
+    public function setDate($date)
     {
-        $this->dateordonn = $dateordonn;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get dateordonn
+     * Get date
      *
      * @return \DateTime
      */
-    public function getDateordonn()
+    public function getDate()
     {
-        return $this->dateordonn;
+        return $this->date;
     }
 
     /**
-     * Set medicament
+     * Set $medicament
      *
-     * @param string $medicament
+     * @param \SamaBundle\Entity\Medicament $medicament
      *
-     * @return Ordonnance
+     * @return Medicament
      */
-    public function setMedicament($medicament)
+    public function setMedicament(\SamaBundle\Entity\Medicament $medicament)
     {
-        $this->medicament = $medicament;
+        $this->medicament= $medicament;
 
         return $this;
     }
 
     /**
-     * Get medicament
+     * Get $medicament
      *
-     * @return string
+     * @return \SamaBundle\Entity\Medicament
      */
     public function getMedicament()
     {
@@ -116,50 +119,50 @@ class Ordonnance
     }
 
     /**
-     * Set idpatientOrd
+     * Set patient
      *
-     * @param \SamaBundle\Entity\Patient $idpatientOrd
+     * @param \SamaBundle\Entity\Patient $patient
      *
      * @return Ordonnance
      */
-    public function setIdpatientOrd(\SamaBundle\Entity\Patient $idpatientOrd = null)
+    public function setPatient(\SamaBundle\Entity\Patient $patient)
     {
-        $this->idpatientOrd = $idpatientOrd;
+        $this->patient = $patient;
 
         return $this;
     }
 
     /**
-     * Get idpatientOrd
+     * Get patient
      *
      * @return \SamaBundle\Entity\Patient
      */
-    public function getIdpatientOrd()
+    public function getPatient()
     {
-        return $this->idpatientOrd;
+        return $this->patient;
     }
 
     /**
-     * Set idmedecinOrd
+     * Set medecin
      *
-     * @param \SamaBundle\Entity\Medecin $idmedecinOrd
+     * @param \SamaBundle\Entity\Medecin $medecin
      *
      * @return Ordonnance
      */
-    public function setIdmedecinOrd(\SamaBundle\Entity\Medecin $idmedecinOrd = null)
+    public function setMedecin(\SamaBundle\Entity\Medecin $medecin)
     {
-        $this->idmedecinOrd = $idmedecinOrd;
+        $this->medecin = $medecin;
 
         return $this;
     }
 
     /**
-     * Get idmedecinOrd
+     * Get medecin
      *
      * @return \SamaBundle\Entity\Medecin
      */
-    public function getIdmedecinOrd()
+    public function getMedecin()
     {
-        return $this->idmedecinOrd;
+        return $this->medecin;
     }
 }

@@ -1,18 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Secretaire list</h1>
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Liste de secretaire</h1>
 
-    <table>
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
-                <th>Idsecretaire</th>
-                <th>Nomsecretaire</th>
-                <th>Prenomsecretaire</th>
-                <th>Telsecretaire</th>
-                <th>Emailsecretaire</th>
-                <th>Sexesecretaire</th>
-                <th>Addressesecretaire</th>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Sexe</th>
+                <th>Addresse</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -28,12 +30,12 @@
                 <td>{{ secretaire.addressesecretaire }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('secretaire_show', { 'id': secretaire.idsecretaire }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('secretaire_edit', { 'id': secretaire.idsecretaire }) }}">edit</a>
-                        </li>
+                        <a class="btn btn-secondary btn-sm" href="{{ path('secretaire_show',
+                        { 'id': secretaire.idsecretaire }) }}" role="button">voir</a>
+
+                        <a class="btn btn-success btn-sm" href="{{ path('secretaire_edit',
+                        { 'id': secretaire.idsecretaire }) }}" role="button">modifier</a>
+
                     </ul>
                 </td>
             </tr>
@@ -42,8 +44,7 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('secretaire_new') }}">Create a new entry</a>
-        </li>
+        <a class="btn btn-success btn-sm" href="{{ path('secretaire_new') }}" role="button">Ajouter sécrétaire</a>
     </ul>
+</div>
 {% endblock %}

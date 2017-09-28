@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SamaCabinetMédical</title>
+    <title>SamaCabinet</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -23,6 +22,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/sb-admin.css')}}" rel="stylesheet">
 
+
 </head>
 
 <body class="fixed-nav" id="page-top">
@@ -30,66 +30,72 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 
-    <a class="navbar-brand" href="#">NDIAYE Cabinet Médical</a>
+    <a class="navbar-brand" href="#">Sama cabinet</a>
+
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title=" Tableau de bord">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">
                 Tableau de bord</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title=" Statistiques">
                 <a class="nav-link" href="#">
                     <i class="fa fa-fw fa-area-chart"></i>
                     <span class="nav-link-text">
                 Statistiques</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-table"></i>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listes">
+                <a class="nav-link" href="{{ path('patient_index')}}">
+                    <i class="fa fa-fw fa-table" aria-hidden="true"></i>
                     <span class="nav-link-text">
-                Listes</span>
+                Patients</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-                    <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">
-                Composants</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
 
-                    <li>
-                        <a href="#">Custom Card </a>
-                    </li>
-
-                    <li>
-                        <a href="#">Login Page</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
-                    <i class="fa fa-fw fa-sitemap"></i>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Medecin">
+                <a class="nav-link" href="{{ path('medecin_index')}}">
+                    <i class="fa fa-user-md" aria-hidden="true"></i>
                     <span class="nav-link-text">
-                Menu</span>
+                Medecin</span>
                 </a>
-                <ul class="sidenav-second-level collapse" id="collapseMulti">
-                    <li>
-                        <a href="#">Sécrétaire</a>
-                    </li>
-                    <li>
-                        <a href="#">Mèdecin</a>
-                    </li>
-                    </li>
-                </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Rendez-vous">
+                <a class="nav-link" href="{{ path('rendezvous_index')}}">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span class="nav-link-text">
+               Rendez-vous</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Consultation">
+                <a class="nav-link" href="{{ path('consultation_index')}}">
+                    <i class="fa fa-medkit" aria-hidden="true"></i>
+                    <span class="nav-link-text">
+                Consultation</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ordonnance">
+                <a class="nav-link" href="{{ path('ordonnance_index')}}">
+                    <i class="fa fa-envira" aria-hidden="true"></i>
+                    <span class="nav-link-text">
+                Ordonnance</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Analyse">
+                <a class="nav-link" href="{{ path('analyse_index')}}">
+                    <i class="fa fa-file-text custom" aria-hidden="true"></i>
+                    <span class="nav-link-text">
+                Analyse</span>
+                </a>
+            </li>
+
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
@@ -98,31 +104,35 @@
                 </a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                  <button class="btn btn-primary" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-                    </div>
-                </form>
-            </li>
-        </ul>
     </div>
 </nav>
-{% block body %}
 
-{% endblock %}
+    {% block body %}
+    {% endblock %}
+     {% block javascripts %}
+    {% endblock %}
+
 <!-- Scroll to Top Button -->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fa fa-angle-up"></i>
 </a>
 
-
+<!-- /menu footer buttons -->
+<div class="sidebar-footer hidden-small">
+    <a data-toggle="tooltip" data-placement="top" title="Settings">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    </a>
+    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+    </a>
+    <a data-toggle="tooltip" data-placement="top" title="Lock">
+        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+    </a>
+    <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+    </a>
+</div>
+<!-- /menu footer buttons -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>

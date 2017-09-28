@@ -10,8 +10,6 @@ class __TwigTemplate_41745215ea7e14d1dfbe332b73d495abddbe2249ccce784f68888281529
         $this->parent = false;
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
-            'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
         );
@@ -19,83 +17,249 @@ class __TwigTemplate_41745215ea7e14d1dfbe332b73d495abddbe2249ccce784f68888281529
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1b1a81b3f612a5d9a597ca4e25afb62f4f7ccc01f65c5191350c4b153aab4bf4 = $this->env->getExtension("native_profiler");
-        $__internal_1b1a81b3f612a5d9a597ca4e25afb62f4f7ccc01f65c5191350c4b153aab4bf4->enter($__internal_1b1a81b3f612a5d9a597ca4e25afb62f4f7ccc01f65c5191350c4b153aab4bf4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
+        $__internal_c9e43dcfa1b74374c47ee7b3831825b0d7177fd355f23f528c8b4cbe8cc99b89 = $this->env->getExtension("native_profiler");
+        $__internal_c9e43dcfa1b74374c47ee7b3831825b0d7177fd355f23f528c8b4cbe8cc99b89->enter($__internal_c9e43dcfa1b74374c47ee7b3831825b0d7177fd355f23f528c8b4cbe8cc99b89_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\" />
-        <title>";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
-        ";
-        // line 6
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    </head>
-    <body>
-        ";
-        // line 10
+<html lang=\"fr\">
+
+<head>
+
+    <meta charset=\"utf-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"author\" content=\"\">
+    <title>SamaCabinet</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+
+    <!-- Custom fonts for this template -->
+    <link href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/font-awesome/css/font-awesome.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+
+    <!-- Plugin CSS -->
+    <link href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/datatables/dataTables.bootstrap4.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+
+    <!-- Custom styles for this template -->
+    <link href=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/sb-admin.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+
+
+</head>
+
+<body class=\"fixed-nav\" id=\"page-top\">
+
+<!-- Navigation -->
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\" id=\"mainNav\">
+
+    <a class=\"navbar-brand\" href=\"#\">Sama cabinet</a>
+
+    <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+        <span class=\"navbar-toggler-icon\"></span>
+    </button>
+
+    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
+        <ul class=\"navbar-nav navbar-sidenav\">
+            <li class=\"nav-item active\" data-toggle=\"tooltip\" data-placement=\"right\" title=\" Tableau de bord\">
+                <a class=\"nav-link\" href=\"#\">
+                    <i class=\"fa fa-fw fa-dashboard\"></i>
+                    <span class=\"nav-link-text\">
+                Tableau de bord</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\" Statistiques\">
+                <a class=\"nav-link\" href=\"#\">
+                    <i class=\"fa fa-fw fa-area-chart\"></i>
+                    <span class=\"nav-link-text\">
+                Statistiques</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Listes\">
+                <a class=\"nav-link\" href=\"";
+        // line 56
+        echo $this->env->getExtension('routing')->getPath("patient_index");
+        echo "\">
+                    <i class=\"fa fa-fw fa-table\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+                Patients</span>
+                </a>
+            </li>
+
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Medecin\">
+                <a class=\"nav-link\" href=\"";
+        // line 64
+        echo $this->env->getExtension('routing')->getPath("medecin_index");
+        echo "\">
+                    <i class=\"fa fa-user-md\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+                Medecin</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Rendez-vous\">
+                <a class=\"nav-link\" href=\"";
+        // line 71
+        echo $this->env->getExtension('routing')->getPath("rendezvous_index");
+        echo "\">
+                    <i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+               Rendez-vous</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Consultation\">
+                <a class=\"nav-link\" href=\"";
+        // line 78
+        echo $this->env->getExtension('routing')->getPath("consultation_index");
+        echo "\">
+                    <i class=\"fa fa-medkit\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+                Consultation</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Ordonnance\">
+                <a class=\"nav-link\" href=\"";
+        // line 85
+        echo $this->env->getExtension('routing')->getPath("ordonnance_index");
+        echo "\">
+                    <i class=\"fa fa-envira\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+                Ordonnance</span>
+                </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Analyse\">
+                <a class=\"nav-link\" href=\"";
+        // line 92
+        echo $this->env->getExtension('routing')->getPath("analyse_index");
+        echo "\">
+                    <i class=\"fa fa-file-text custom\" aria-hidden=\"true\"></i>
+                    <span class=\"nav-link-text\">
+                Analyse</span>
+                </a>
+            </li>
+
+        </ul>
+        <ul class=\"navbar-nav sidenav-toggler\">
+            <li class=\"nav-item\">
+                <a class=\"nav-link text-center\" id=\"sidenavToggler\">
+                    <i class=\"fa fa-fw fa-angle-left\"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    ";
+        // line 110
         $this->displayBlock('body', $context, $blocks);
-        // line 11
-        echo "        ";
+        // line 112
+        echo "     ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
-        echo "    </body>
+        // line 114
+        echo "
+<!-- Scroll to Top Button -->
+<a class=\"scroll-to-top rounded\" href=\"#page-top\">
+    <i class=\"fa fa-angle-up\"></i>
+</a>
+
+<!-- /menu footer buttons -->
+<div class=\"sidebar-footer hidden-small\">
+    <a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Settings\">
+        <span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span>
+    </a>
+    <a data-toggle=\"tooltip\" data-placement=\"top\" title=\"FullScreen\">
+        <span class=\"glyphicon glyphicon-fullscreen\" aria-hidden=\"true\"></span>
+    </a>
+    <a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Lock\">
+        <span class=\"glyphicon glyphicon-eye-close\" aria-hidden=\"true\"></span>
+    </a>
+    <a data-toggle=\"tooltip\" data-placement=\"top\" title=\"Logout\" href=\"login.html\">
+        <span class=\"glyphicon glyphicon-off\" aria-hidden=\"true\"></span>
+    </a>
+</div>
+<!-- /menu footer buttons -->
+
+<!-- Bootstrap core JavaScript -->
+<script src=\"";
+        // line 138
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/jquery/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 139
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/popper/popper.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 140
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+
+<!-- Plugin JavaScript -->
+<script src=\"";
+        // line 143
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/jquery-easing/jquery.easing.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 144
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/chart.js/Chart.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 145
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/datatables/jquery.dataTables.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 146
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("vendor/datatables/dataTables.bootstrap4.js"), "html", null, true);
+        echo "\"></script>
+
+<!-- Custom scripts for this template -->
+<script src=\"";
+        // line 149
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/sb-admin.min.js"), "html", null, true);
+        echo "\"> </script>
+
+</body>
+
 </html>
 ";
         
-        $__internal_1b1a81b3f612a5d9a597ca4e25afb62f4f7ccc01f65c5191350c4b153aab4bf4->leave($__internal_1b1a81b3f612a5d9a597ca4e25afb62f4f7ccc01f65c5191350c4b153aab4bf4_prof);
+        $__internal_c9e43dcfa1b74374c47ee7b3831825b0d7177fd355f23f528c8b4cbe8cc99b89->leave($__internal_c9e43dcfa1b74374c47ee7b3831825b0d7177fd355f23f528c8b4cbe8cc99b89_prof);
 
     }
 
-    // line 5
-    public function block_title($context, array $blocks = array())
-    {
-        $__internal_42672b673531c2f863e705b31d3919c394b2c9ec89c24076c822f81901b6c89d = $this->env->getExtension("native_profiler");
-        $__internal_42672b673531c2f863e705b31d3919c394b2c9ec89c24076c822f81901b6c89d->enter($__internal_42672b673531c2f863e705b31d3919c394b2c9ec89c24076c822f81901b6c89d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
-
-        
-        $__internal_42672b673531c2f863e705b31d3919c394b2c9ec89c24076c822f81901b6c89d->leave($__internal_42672b673531c2f863e705b31d3919c394b2c9ec89c24076c822f81901b6c89d_prof);
-
-    }
-
-    // line 6
-    public function block_stylesheets($context, array $blocks = array())
-    {
-        $__internal_5a0e7f1cf3434f4d5b939bedd8b5f59442b976732335a29ab7c197c30e4ecb80 = $this->env->getExtension("native_profiler");
-        $__internal_5a0e7f1cf3434f4d5b939bedd8b5f59442b976732335a29ab7c197c30e4ecb80->enter($__internal_5a0e7f1cf3434f4d5b939bedd8b5f59442b976732335a29ab7c197c30e4ecb80_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        
-        $__internal_5a0e7f1cf3434f4d5b939bedd8b5f59442b976732335a29ab7c197c30e4ecb80->leave($__internal_5a0e7f1cf3434f4d5b939bedd8b5f59442b976732335a29ab7c197c30e4ecb80_prof);
-
-    }
-
-    // line 10
+    // line 110
     public function block_body($context, array $blocks = array())
     {
-        $__internal_f3ac41ce686e9ae07b86849166df73d5071e551bd174039f4b23dd227085534c = $this->env->getExtension("native_profiler");
-        $__internal_f3ac41ce686e9ae07b86849166df73d5071e551bd174039f4b23dd227085534c->enter($__internal_f3ac41ce686e9ae07b86849166df73d5071e551bd174039f4b23dd227085534c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_af094081e86974afece403dc6797b9e65e2c1a31d48c3d75af3c7c980c1f4bbd = $this->env->getExtension("native_profiler");
+        $__internal_af094081e86974afece403dc6797b9e65e2c1a31d48c3d75af3c7c980c1f4bbd->enter($__internal_af094081e86974afece403dc6797b9e65e2c1a31d48c3d75af3c7c980c1f4bbd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
+        // line 111
+        echo "    ";
         
-        $__internal_f3ac41ce686e9ae07b86849166df73d5071e551bd174039f4b23dd227085534c->leave($__internal_f3ac41ce686e9ae07b86849166df73d5071e551bd174039f4b23dd227085534c_prof);
+        $__internal_af094081e86974afece403dc6797b9e65e2c1a31d48c3d75af3c7c980c1f4bbd->leave($__internal_af094081e86974afece403dc6797b9e65e2c1a31d48c3d75af3c7c980c1f4bbd_prof);
 
     }
 
-    // line 11
+    // line 112
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_6ed92e85b1ccfbdacd7127190975ad8b1c409a681d0a2ac124f9e9db255b3873 = $this->env->getExtension("native_profiler");
-        $__internal_6ed92e85b1ccfbdacd7127190975ad8b1c409a681d0a2ac124f9e9db255b3873->enter($__internal_6ed92e85b1ccfbdacd7127190975ad8b1c409a681d0a2ac124f9e9db255b3873_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_5a01da16529db9944096bf777fe39e341bbdd9c0e54d039d51e64f13ad52d514 = $this->env->getExtension("native_profiler");
+        $__internal_5a01da16529db9944096bf777fe39e341bbdd9c0e54d039d51e64f13ad52d514->enter($__internal_5a01da16529db9944096bf777fe39e341bbdd9c0e54d039d51e64f13ad52d514_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
+        // line 113
+        echo "    ";
         
-        $__internal_6ed92e85b1ccfbdacd7127190975ad8b1c409a681d0a2ac124f9e9db255b3873->leave($__internal_6ed92e85b1ccfbdacd7127190975ad8b1c409a681d0a2ac124f9e9db255b3873_prof);
+        $__internal_5a01da16529db9944096bf777fe39e341bbdd9c0e54d039d51e64f13ad52d514->leave($__internal_5a01da16529db9944096bf777fe39e341bbdd9c0e54d039d51e64f13ad52d514_prof);
 
     }
 
@@ -111,20 +275,160 @@ class __TwigTemplate_41745215ea7e14d1dfbe332b73d495abddbe2249ccce784f68888281529
 
     public function getDebugInfo()
     {
-        return array (  92 => 11,  81 => 10,  70 => 6,  59 => 5,  50 => 12,  47 => 11,  45 => 10,  38 => 7,  36 => 6,  32 => 5,  26 => 1,);
+        return array (  260 => 113,  254 => 112,  247 => 111,  241 => 110,  228 => 149,  222 => 146,  218 => 145,  214 => 144,  210 => 143,  204 => 140,  200 => 139,  196 => 138,  170 => 114,  167 => 112,  165 => 110,  144 => 92,  134 => 85,  124 => 78,  114 => 71,  104 => 64,  93 => 56,  57 => 23,  51 => 20,  45 => 17,  39 => 14,  24 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
-/* <html>*/
-/*     <head>*/
-/*         <meta charset="UTF-8" />*/
-/*         <title>{% block title %}{% endblock %}</title>*/
-/*         {% block stylesheets %}{% endblock %}*/
-/*         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />*/
-/*     </head>*/
-/*     <body>*/
-/*         {% block body %}{% endblock %}*/
-/*         {% block javascripts %}{% endblock %}*/
-/*     </body>*/
+/* <html lang="fr">*/
+/* */
+/* <head>*/
+/* */
+/*     <meta charset="utf-8">*/
+/*     <meta http-equiv="X-UA-Compatible" content="IE=edge">*/
+/*     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">*/
+/*     <meta name="description" content="">*/
+/*     <meta name="author" content="">*/
+/*     <title>SamaCabinet</title>*/
+/* */
+/*     <!-- Bootstrap core CSS -->*/
+/*     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">*/
+/* */
+/*     <!-- Custom fonts for this template -->*/
+/*     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">*/
+/* */
+/*     <!-- Plugin CSS -->*/
+/*     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">*/
+/* */
+/*     <!-- Custom styles for this template -->*/
+/*     <link href="{{ asset('css/sb-admin.css')}}" rel="stylesheet">*/
+/* */
+/* */
+/* </head>*/
+/* */
+/* <body class="fixed-nav" id="page-top">*/
+/* */
+/* <!-- Navigation -->*/
+/* <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">*/
+/* */
+/*     <a class="navbar-brand" href="#">Sama cabinet</a>*/
+/* */
+/*     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">*/
+/*         <span class="navbar-toggler-icon"></span>*/
+/*     </button>*/
+/* */
+/*     <div class="collapse navbar-collapse" id="navbarResponsive">*/
+/*         <ul class="navbar-nav navbar-sidenav">*/
+/*             <li class="nav-item active" data-toggle="tooltip" data-placement="right" title=" Tableau de bord">*/
+/*                 <a class="nav-link" href="#">*/
+/*                     <i class="fa fa-fw fa-dashboard"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Tableau de bord</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title=" Statistiques">*/
+/*                 <a class="nav-link" href="#">*/
+/*                     <i class="fa fa-fw fa-area-chart"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Statistiques</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listes">*/
+/*                 <a class="nav-link" href="{{ path('patient_index')}}">*/
+/*                     <i class="fa fa-fw fa-table" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Patients</span>*/
+/*                 </a>*/
+/*             </li>*/
+/* */
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Medecin">*/
+/*                 <a class="nav-link" href="{{ path('medecin_index')}}">*/
+/*                     <i class="fa fa-user-md" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Medecin</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Rendez-vous">*/
+/*                 <a class="nav-link" href="{{ path('rendezvous_index')}}">*/
+/*                     <i class="fa fa-calendar" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                Rendez-vous</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Consultation">*/
+/*                 <a class="nav-link" href="{{ path('consultation_index')}}">*/
+/*                     <i class="fa fa-medkit" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Consultation</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ordonnance">*/
+/*                 <a class="nav-link" href="{{ path('ordonnance_index')}}">*/
+/*                     <i class="fa fa-envira" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Ordonnance</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Analyse">*/
+/*                 <a class="nav-link" href="{{ path('analyse_index')}}">*/
+/*                     <i class="fa fa-file-text custom" aria-hidden="true"></i>*/
+/*                     <span class="nav-link-text">*/
+/*                 Analyse</span>*/
+/*                 </a>*/
+/*             </li>*/
+/* */
+/*         </ul>*/
+/*         <ul class="navbar-nav sidenav-toggler">*/
+/*             <li class="nav-item">*/
+/*                 <a class="nav-link text-center" id="sidenavToggler">*/
+/*                     <i class="fa fa-fw fa-angle-left"></i>*/
+/*                 </a>*/
+/*             </li>*/
+/*         </ul>*/
+/*     </div>*/
+/* </nav>*/
+/* */
+/*     {% block body %}*/
+/*     {% endblock %}*/
+/*      {% block javascripts %}*/
+/*     {% endblock %}*/
+/* */
+/* <!-- Scroll to Top Button -->*/
+/* <a class="scroll-to-top rounded" href="#page-top">*/
+/*     <i class="fa fa-angle-up"></i>*/
+/* </a>*/
+/* */
+/* <!-- /menu footer buttons -->*/
+/* <div class="sidebar-footer hidden-small">*/
+/*     <a data-toggle="tooltip" data-placement="top" title="Settings">*/
+/*         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>*/
+/*     </a>*/
+/*     <a data-toggle="tooltip" data-placement="top" title="FullScreen">*/
+/*         <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>*/
+/*     </a>*/
+/*     <a data-toggle="tooltip" data-placement="top" title="Lock">*/
+/*         <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>*/
+/*     </a>*/
+/*     <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">*/
+/*         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>*/
+/*     </a>*/
+/* </div>*/
+/* <!-- /menu footer buttons -->*/
+/* */
+/* <!-- Bootstrap core JavaScript -->*/
+/* <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>*/
+/* <script src="{{ asset('vendor/popper/popper.min.js')}}"></script>*/
+/* <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>*/
+/* */
+/* <!-- Plugin JavaScript -->*/
+/* <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>*/
+/* <script src="{{ asset('vendor/chart.js/Chart.min.js')}}"></script>*/
+/* <script src="{{ asset('vendor/datatables/jquery.dataTables.js')}}"></script>*/
+/* <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js')}}"></script>*/
+/* */
+/* <!-- Custom scripts for this template -->*/
+/* <script src="{{ asset('js/sb-admin.min.js')}}"> </script>*/
+/* */
+/* </body>*/
+/* */
 /* </html>*/
 /* */

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Liste des medicaments</h1>
+
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Quantite</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medicament in medicaments %}
+            <tr>
+                <td><a href="{{ path('medicament_show', { 'id': medicament.id }) }}">{{ medicament.id }}</a></td>
+                <td>{{ medicament.nom }}</td>
+                <td>{{ medicament.quantite }}</td>
+                <td>{{ medicament.type }}</td>
+                <td>
+                    <ul>
+
+                            <a class="btn btn-secondary btn-sm" href="{{ path('medicament_show',
+                            { 'id': medicament.id }) }}" role="button">voir</a>
+                            <a class="btn btn-success btn-sm" href="{{ path('medicament_edit',
+                            { 'id': medicament.id }) }}" role="button">modifier</a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+            <a class="btn btn-success btn-sm" href="{{ path('medicament_new') }}" role="button">Ajouter Médicament</a>
+    </ul>
+</div>
+
+{% endblock %}

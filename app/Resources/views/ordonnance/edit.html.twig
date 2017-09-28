@@ -1,21 +1,23 @@
 {% extends 'base.html.twig' %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
 
 {% block body %}
-    <h1>Ordonnance edit</h1>
+    <div class="content-wrapper">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Modifier Ordonnance</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <ul>
+        <input class="btn btn-success btn-sm" type="submit" value="Modifier" />
     {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('ordonnance_index') }}">Back to the list</a>
-        </li>
-        <li>
+            <a class="btn btn-success btn-sm" href="{{ path('ordonnance_index') }}" role="button">Retour</a>
+        </ul>
+        <ul>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
-        </li>
+
     </ul>
+    </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Modifier medicament</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+    <ul>
+    <input class="btn btn-success btn-sm" type="submit" value="Modifier" />
+    {{ form_end(edit_form) }}
+            <a class="btn btn-success btn-sm" href="{{ path('medicament_index') }}" role="button">Retour</a>
+    </ul>
+    <ul>
+        {{ form_start(delete_form) }}
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+    </ul>
+</div>
+{% endblock %}

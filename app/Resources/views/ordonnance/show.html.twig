@@ -1,36 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
     <h1>Ordonnance</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <tbody>
             <tr>
-                <th>Idordonn</th>
-                <td>{{ ordonnance.idordonn }}</td>
+                <th>Id</th>
+                <td>{{ ordonnance.id}}</td>
             </tr>
             <tr>
-                <th>Dateordonn</th>
-                <td>{% if ordonnance.dateordonn %}{{ ordonnance.dateordonn|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Medicament</th>
-                <td>{{ ordonnance.medicament }}</td>
+                <th>Date</th>
+                <td>{% if ordonnance.date %}{{ ordonnance.date|date('Y-m-d') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('ordonnance_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('ordonnance_edit', { 'id': ordonnance.idordonn }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+            <a class="btn btn-success btn-sm" href="{{ path('ordonnance_index') }}" role="button">Retour</a>
+            <a class="btn btn-success btn-sm" href="{{ path('ordonnance_edit', { 'id': ordonnance.id })
+            }}" role="button">Modifier</a>
     </ul>
+    <ul>
+        {{ form_start(delete_form) }}
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+    </ul>
+</div>
 {% endblock %}

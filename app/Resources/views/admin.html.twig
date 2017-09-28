@@ -1,0 +1,10 @@
+{% extends 'basse.html.twig' %}
+{% block body %}
+    <div class="content-wrapper">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <h1> Page Administrateur</h1>
+
+        <p><a href="{{ path('fos_user_security_logout') }}"> Se connecter</a></p>
+
+    </div>
+{% endblock %}

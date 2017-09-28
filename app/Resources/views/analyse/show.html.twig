@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <h1>Analyse</h1>
+
+    <table class="table table-responsive table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ analyse.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ analyse.nom }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ analyse.type }}</td>
+            </tr>
+            <tr>
+                <th>Resultat</th>
+                <td>{{ analyse.resultat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+            <a class="btn btn-success btn-sm" href="{{ path('analyse_index') }}" role="button">Retour</a>
+            <a class="btn btn-success btn-sm" href="{{ path('analyse_edit', { 'id': analyse.id })
+            }}" role="button">Modifier</a>
+    </ul>
+    <ul>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+    </ul>
+    </div>
+{% endblock %}

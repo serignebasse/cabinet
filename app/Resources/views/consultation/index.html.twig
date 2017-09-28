@@ -1,31 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Consultation list</h1>
+    <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2" method="post" action="{{ path('consultation_recherche')}}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="decision..." name="mot">
+                        <span class="input-group-btn">
+                  <button class="btn btn-success" type="button" >
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </nav>
 
-    <table>
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <h1>Liste des Consultations </h1>
+
+    <table  class="table table-sm table-hover">
         <thead>
             <tr>
-                <th>Idconsult</th>
-                <th>Dateconsult</th>
+                <th>Id</th>
+                <th>Date</th>
                 <th>Diagnostic</th>
+                <th>Traitement</th>
+                <th>Decision</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for consultation in consultations %}
             <tr>
-                <td><a href="{{ path('consultation_show', { 'id': consultation.idconsult }) }}">{{ consultation.idconsult }}</a></td>
-                <td>{% if consultation.dateconsult %}{{ consultation.dateconsult|date('Y-m-d') }}{% endif %}</td>
+                <td><a href="{{ path('consultation_show', { 'id': consultation.id })
+                    }}">{{ consultation.id }}</a></td>
+                <td>{% if consultation.date %}{{ consultation.date|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ consultation.diagnostic }}</td>
+                <td>{{ consultation.traitement }}</td>
+                <td>{{ consultation.decision }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('consultation_show', { 'id': consultation.idconsult }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('consultation_edit', { 'id': consultation.idconsult }) }}">edit</a>
-                        </li>
+                            <a class="btn btn-secondary btn-sm" href="{{ path('consultation_show',
+                            { 'id': consultation.id }) }}" role="button">voir</a>
+                            <a class="btn btn-success btn-sm" href="{{ path('consultation_edit',
+                            { 'id': consultation.id }) }}" role="button">modifier</a>
+
                     </ul>
                 </td>
             </tr>
@@ -34,8 +57,8 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('consultation_new') }}">Create a new entry</a>
-        </li>
+            <a class="btn btn-success btn-sm" href="{{ path('consultation_new')
+            }}" role="button">Ajouter une consultaiton</a>
     </ul>
+</div>
 {% endblock %}

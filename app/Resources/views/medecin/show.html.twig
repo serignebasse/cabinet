@@ -1,60 +1,64 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
     <h1>Medecin</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <tbody>
             <tr>
-                <th>Idmedecin</th>
-                <td>{{ medecin.idmedecin }}</td>
+                <th>Id</th>
+                <td>{{ medecin.id }}</td>
             </tr>
             <tr>
-                <th>Nommedecin</th>
-                <td>{{ medecin.nommedecin }}</td>
+                <th>Nom</th>
+                <td>{{ medecin.nom }}</td>
             </tr>
             <tr>
-                <th>Prenommedecin</th>
-                <td>{{ medecin.prenommedecin }}</td>
+                <th>Prenom</th>
+                <td>{{ medecin.prenom }}</td>
             </tr>
             <tr>
-                <th>Addressemedecin</th>
-                <td>{{ medecin.addressemedecin }}</td>
+                <th>Addresse</th>
+                <td>{{ medecin.addresse }}</td>
             </tr>
             <tr>
-                <th>Emailmedecin</th>
-                <td>{{ medecin.emailmedecin }}</td>
+                <th>Email</th>
+                <td>{{ medecin.email }}</td>
             </tr>
             <tr>
-                <th>Telmedecin</th>
-                <td>{{ medecin.telmedecin }}</td>
+                <th>Télèphone</th>
+                <td>{{ medecin.telephone }}</td>
             </tr>
             <tr>
-                <th>Sexemedecin</th>
-                <td>{{ medecin.sexemedecin }}</td>
+                <th>Sexe</th>
+                <td>{{ medecin.sexe }}</td>
             </tr>
             <tr>
-                <th>Cabinetmedecin</th>
-                <td>{{ medecin.cabinetmedecin }}</td>
+                <th>Cabinet</th>
+                <td>{{ medecin.cabinet }}</td>
             </tr>
             <tr>
-                <th>Specialitemedecin</th>
-                <td>{{ medecin.specialitemedecin }}</td>
+                <th>Specialité</th>
+                <td>{{ medecin.specialite }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('medecin_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('medecin_edit', { 'id': medecin.idmedecin }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+
+            <a class="btn btn-success btn-sm" href="{{ path('medecin_index') }}" role="button">Retour</a>
+
+            <a class="btn btn-success btn-sm" href="{{ path('medecin_edit',
+            { 'id': medecin.id }) }}" role="button">Modifier</a>
     </ul>
+    <ul>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+
+    </ul>
+</div>
 {% endblock %}

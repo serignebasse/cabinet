@@ -122,6 +122,50 @@ class MedecinController extends Controller
         return $this->redirectToRoute('medecin_index');
     }
 
+
+    /**
+     * Lists some Medecin entities.
+     *
+     * @Route("/", name="medecin_recherche")
+     * @Method("POST")
+     */
+    public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $mot=$request->get('mot');
+        $medecins = $em->getRepository('SamaBundle:Medecin')->findBy(
+            array('telephone'=> $mot)
+        );
+
+        if ($medecins){
+        return $this->render('medecin/index.html.twig', array(
+            'medecins' =>  $medecins,
+        ));
+        }
+
+        else{
+            $medeci = $em->getRepository('SamaBundle:Medecin')->findBy(
+                array('nom'=> $mot));
+                 if ($medeci){
+                          return $this->render('medecin/index.html.twig', array(
+                           'medecins' =>  $medeci,
+                 ));
+                 }
+
+                 else{
+                     $med = $em->getRepository('SamaBundle:Medecin')->findBy(
+                         array('prenom'=> $mot));
+
+                         return $this->render('medecin/index.html.twig', array(
+                             'medecins' =>  $med,
+                         ));
+                 }
+            }
+    }
+
+
+
     /**
      * Creates a form to delete a Medecin entity.
      *

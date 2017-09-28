@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Rendezvous creation</h1>
+    <div class="content-wrapper col-lg-5">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <h1>Programmer Rendez vous</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <ul>
+            <input  class="btn btn-success btn-sm" type="submit" value="Valider" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('rendezvous_index') }}">Back to the list</a>
-        </li>
+            <a  class="btn btn-success btn-sm" href="{{ path('rendezvous_index') }}" role="button">Retour</a>
     </ul>
+    </div>
 {% endblock %}

@@ -19,265 +19,266 @@ class Medecin
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idmedecin;
+    private $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nomMedecin", type="string", length=45, nullable=false)
      */
-    private $nommedecin;
+    private $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenomMedecin", type="string", length=45, nullable=false)
      */
-    private $prenommedecin;
+    private $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="addresseMedecin", type="string", length=45, nullable=true)
      */
-    private $addressemedecin;
+    private $addresse;
 
     /**
      * @var string
      *
      * @ORM\Column(name="emailMedecin", type="string", length=25, nullable=true)
      */
-    private $emailmedecin;
+    private $email;
 
     /**
      * @var string
      *
      * @ORM\Column(name="telMedecin", type="decimal", precision=10, scale=0, nullable=true)
      */
-    private $telmedecin;
+    private $telephone;
 
     /**
      * @var string
      *
      * @ORM\Column(name="sexeMedecin", type="string", length=15, nullable=true)
      */
-    private $sexemedecin;
+    private $sexe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="cabinetMedecin", type="string", length=45, nullable=true)
      */
-    private $cabinetmedecin;
+    private $cabinet;
 
     /**
      * @var string
      *
      * @ORM\Column(name="specialiteMedecin", type="string", length=30, nullable=true)
      */
-    private $specialitemedecin;
+    private $specialite;
 
 
 
     /**
-     * Get idmedecin
+     * Get id
      *
      * @return integer
      */
-    public function getIdmedecin()
+    public function getId()
     {
-        return $this->idmedecin;
+        return $this->id;
     }
 
     /**
-     * Set nommedecin
+     * Set nom
      *
-     * @param string $nommedecin
+     * @param string $nom
      *
      * @return Medecin
      */
-    public function setNommedecin($nommedecin)
+    public function setNom($nom)
     {
-        $this->nommedecin = $nommedecin;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get nommedecin
+     * Get nom
      *
      * @return string
      */
-    public function getNommedecin()
+    public function getNom()
     {
-        return $this->nommedecin;
+        return $this->nom;
     }
 
     /**
-     * Set prenommedecin
+     * Set prenom
      *
-     * @param string $prenommedecin
+     * @param string $prenom
      *
      * @return Medecin
      */
-    public function setPrenommedecin($prenommedecin)
+    public function setPrenom($prenom)
     {
-        $this->prenommedecin = $prenommedecin;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Get prenommedecin
+     * Get prenom
      *
      * @return string
      */
-    public function getPrenommedecin()
+    public function getPrenom()
     {
-        return $this->prenommedecin;
+        return $this->prenom;
     }
 
+
     /**
-     * Set addressemedecin
+     * Set addresse
      *
-     * @param string $addressemedecin
+     * @param string $addresse
      *
      * @return Medecin
      */
-    public function setAddressemedecin($addressemedecin)
+    public function setAddresse($addresse)
     {
-        $this->addressemedecin = $addressemedecin;
+        $this->addresse = $addresse;
 
         return $this;
     }
 
     /**
-     * Get addressemedecin
+     * Get addresse
      *
      * @return string
      */
-    public function getAddressemedecin()
+    public function getAddresse()
     {
-        return $this->addressemedecin;
+        return $this->addresse;
     }
 
     /**
-     * Set emailmedecin
+     * Set email
      *
-     * @param string $emailmedecin
+     * @param string $email
      *
      * @return Medecin
      */
-    public function setEmailmedecin($emailmedecin)
+    public function setEmail($email)
     {
-        $this->emailmedecin = $emailmedecin;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get emailmedecin
+     * Get email
      *
      * @return string
      */
-    public function getEmailmedecin()
+    public function getEmail()
     {
-        return $this->emailmedecin;
+        return $this->email;
     }
 
     /**
-     * Set telmedecin
+     * Set telephone
      *
-     * @param string $telmedecin
+     * @param string $telephone
      *
      * @return Medecin
      */
-    public function setTelmedecin($telmedecin)
+    public function setTelephone($telephone)
     {
-        $this->telmedecin = $telmedecin;
+        $this->telephone = $telephone;
 
         return $this;
     }
 
     /**
-     * Get telmedecin
+     * Get telephone
      *
      * @return string
      */
-    public function getTelmedecin()
+    public function getTelephone()
     {
-        return $this->telmedecin;
+        return $this->telephone;
     }
 
     /**
-     * Set sexemedecin
+     * Set sexe
      *
-     * @param string $sexemedecin
+     * @param string $sexe
      *
      * @return Medecin
      */
-    public function setSexemedecin($sexemedecin)
+    public function setSexe($sexe)
     {
-        $this->sexemedecin = $sexemedecin;
+        $this->sexe = $sexe;
 
         return $this;
     }
 
     /**
-     * Get sexemedecin
+     * Get sexe
      *
      * @return string
      */
-    public function getSexemedecin()
+    public function getSexe()
     {
-        return $this->sexemedecin;
+        return $this->sexe;
     }
 
     /**
-     * Set cabinetmedecin
+     * Set cabinet
      *
-     * @param string $cabinetmedecin
+     * @param string $cabinet
      *
      * @return Medecin
      */
-    public function setCabinetmedecin($cabinetmedecin)
+    public function setCabinet($cabinet)
     {
-        $this->cabinetmedecin = $cabinetmedecin;
+        $this->cabinet = $cabinet;
 
         return $this;
     }
 
     /**
-     * Get cabinetmedecin
+     * Get cabinet
      *
      * @return string
      */
-    public function getCabinetmedecin()
+    public function getCabinet()
     {
-        return $this->cabinetmedecin;
+        return $this->cabinet;
     }
 
     /**
-     * Set specialitemedecin
+     * Set specialite
      *
-     * @param string $specialitemedecin
+     * @param string $specialite
      *
      * @return Medecin
      */
-    public function setSpecialitemedecin($specialitemedecin)
+    public function setSpecialite($specialite)
     {
-        $this->specialitemedecin = $specialitemedecin;
+        $this->specialite = $specialite;
 
         return $this;
     }
 
     /**
-     * Get specialitemedecin
+     * Get specialite
      *
      * @return string
      */
-    public function getSpecialitemedecin()
+    public function getSpecialite()
     {
-        return $this->specialitemedecin;
+        return $this->specialite;
     }
 }

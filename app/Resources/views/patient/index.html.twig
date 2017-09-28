@@ -1,10 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <nav class="navbar navbar-expand-lg ">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0 mr-lg-2" method="post" action="{{ path('patient_recherche')}}">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="nom,prénom,téléphone..." name="mot">
+                    <span class="input-group-btn">
+                  <button class="btn btn-success" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+                </div>
+            </form>
+        </li>
+    </ul>
+    </nav>
+
+<div class="content-wrapper">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <h1>Liste des patients </h1>
 
-    <table>
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,22 +39,21 @@
         <tbody>
         {% for patient in patients %}
             <tr>
-                <td><a href="{{ path('patient_show', { 'id': patient.idpatient }) }}">{{ patient.idpatient }}</a></td>
-                <td>{{ patient.nompatient }}</td>
-                <td>{{ patient.prenompatient }}</td>
-                <td>{{ patient.sexepatient }}</td>
-                <td>{% if patient.datenaisspatient %}{{ patient.datenaisspatient|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ patient.addressepatient }}</td>
-                <td>{{ patient.telpatient }}</td>
-                <td>{{ patient.agepatient }}</td>
+                <td><a href="{{ path('patient_show', { 'id': patient.id }) }}">{{ patient.id }}</a></td>
+                <td>{{ patient.nom }}</td>
+                <td>{{ patient.prenom }}</td>
+                <td>{{ patient.sexe }}</td>
+                <td>{% if patient.datenaissance %}{{ patient.datenaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ patient.addresse }}</td>
+                <td>{{ patient.telephone }}</td>
+                <td>{{ patient.age }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('patient_show', { 'id': patient.idpatient }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('patient_edit', { 'id': patient.idpatient }) }}">edit</a>
-                        </li>
+                            <a class="btn btn-secondary btn-sm" href="{{ path('patient_show', { 'id': patient.id
+                            })}}" role="button">voir</a>
+
+                            <a class="btn btn-success btn-sm" href="{{ path('patient_edit', { 'id': patient.id
+                            }) }}" role="button">modifier</a>
                     </ul>
                 </td>
             </tr>
@@ -45,8 +62,7 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('patient_new') }}">Create a new entry</a>
-        </li>
+            <a class="btn btn-success btn-sm" href="{{ path('patient_new') }}"  role="button">Ajouter un patient</a>
     </ul>
+</div>
 {% endblock %}

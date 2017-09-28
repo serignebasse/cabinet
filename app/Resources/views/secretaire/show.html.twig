@@ -1,52 +1,52 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="content-wrapper col-lg-3">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <h1>Secretaire</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <tbody>
             <tr>
-                <th>Idsecretaire</th>
+                <th>Id</th>
                 <td>{{ secretaire.idsecretaire }}</td>
             </tr>
             <tr>
-                <th>Nomsecretaire</th>
+                <th>Nom</th>
                 <td>{{ secretaire.nomsecretaire }}</td>
             </tr>
             <tr>
-                <th>Prenomsecretaire</th>
+                <th>Prenom</th>
                 <td>{{ secretaire.prenomsecretaire }}</td>
             </tr>
             <tr>
-                <th>Telsecretaire</th>
+                <th>Téléphone</th>
                 <td>{{ secretaire.telsecretaire }}</td>
             </tr>
             <tr>
-                <th>Emailsecretaire</th>
+                <th>Email</th>
                 <td>{{ secretaire.emailsecretaire }}</td>
             </tr>
             <tr>
-                <th>Sexesecretaire</th>
+                <th>Sexe</th>
                 <td>{{ secretaire.sexesecretaire }}</td>
             </tr>
             <tr>
-                <th>Addressesecretaire</th>
+                <th>Addresse</th>
                 <td>{{ secretaire.addressesecretaire }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('secretaire_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('secretaire_edit', { 'id': secretaire.idsecretaire }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        <a class="btn btn-success btn-sm" href="{{ path('secretaire_index') }}" role="button">Retour</a>
+        <a class="btn btn-success btn-sm"  href="{{ path('secretaire_edit',
+        { 'id': secretaire.idsecretaire }) }}">Modifier</a>
     </ul>
+    <ul>
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+    </ul>
+</div>
 {% endblock %}

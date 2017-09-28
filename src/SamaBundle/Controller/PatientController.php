@@ -2,6 +2,8 @@
 
 namespace SamaBundle\Controller;
 
+use function Sodium\add;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -50,7 +52,7 @@ class PatientController extends Controller
             $em->persist($patient);
             $em->flush();
 
-            return $this->redirectToRoute('patient_show', array('id' => $patient->getIdpatient()));
+            return $this->redirectToRoute('patient_show', array('id' => $patient->getId()));
         }
 
         return $this->render('patient/new.html.twig', array(
@@ -92,7 +94,7 @@ class PatientController extends Controller
             $em->persist($patient);
             $em->flush();
 
-            return $this->redirectToRoute('patient_edit', array('id' => $patient->getIdpatient()));
+            return $this->redirectToRoute('patient_edit', array('id' => $patient->getId()));
         }
 
         return $this->render('patient/edit.html.twig', array(
@@ -122,6 +124,49 @@ class PatientController extends Controller
         return $this->redirectToRoute('patient_index');
     }
 
+
+    /**
+     * Lists all Patient entities.
+     *
+     * @Route("/", name="patient_recherche")
+     * @Method("POST")
+     */
+        public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $mot=$request->get('mot');
+        $patients = $em->getRepository('SamaBundle:Patient')->findBy(
+            array('telephone'=> $mot)
+        );
+
+        if ( $patients){
+            return $this->render('patient/index.html.twig', array(
+                'patients' =>   $patients,
+            ));
+        }
+
+        else{
+            $patient = $em->getRepository('SamaBundle:Patient')->findBy(
+                array('nom'=> $mot));
+            if ($patient){
+                return $this->render('patient/index.html.twig', array(
+                    'patients' =>  $patient,
+                ));
+            }
+
+            else{
+                $patien = $em->getRepository('SamaBundle:Patient')->findBy(
+                    array('prenom'=> $mot));
+
+                return $this->render('patient/index.html.twig', array(
+                    'patients' =>  $patien,
+                ));
+            }
+        }
+    }
+
+
     /**
      * Creates a form to delete a Patient entity.
      *
@@ -132,7 +177,7 @@ class PatientController extends Controller
     private function createDeleteForm(Patient $patient)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('patient_delete', array('id' => $patient->getIdpatient())))
+            ->setAction($this->generateUrl('patient_delete', array('id' => $patient->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

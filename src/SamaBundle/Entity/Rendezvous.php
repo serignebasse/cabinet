@@ -3,6 +3,7 @@
 namespace SamaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Rendezvous
@@ -19,62 +20,64 @@ class Rendezvous
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idrv;
+    private $id;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="date", nullable=false)
+     * @ORM\Column(name="date", type="datetime", nullable=false)
      */
     private $date;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="frequenceRv", type="string", length=45, nullable=true)
+     * @ORM\Column(name="frequence", type="string", length=45, nullable=true)
      */
-    private $frequencerv;
+    private $frequence;
 
     /**
      * @var \Patient
      *
+     * @Assert\Valid()
+     * @Assert\Type(type="SamaBundle\Entity\Patient")
      * @ORM\ManyToOne(targetEntity="Patient")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idPatient_rv", referencedColumnName="idPatient")
+     *   @ORM\JoinColumn(name="idPatient_rv", referencedColumnName="idPatient", nullable=false)
      * })
      */
-    private $idpatientRv;
+    private $patient;
 
     /**
      * @var \Medecin
      *
      * @ORM\ManyToOne(targetEntity="Medecin")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idMedecin_rv", referencedColumnName="idMedecin")
+     *   @ORM\JoinColumn(name="idMedecin_rv", referencedColumnName="idMedecin", nullable=false)
      * })
      */
-    private $idmedecinRv;
+    private $medecin;
 
     /**
      * @var \Secretaire
      *
      * @ORM\ManyToOne(targetEntity="Secretaire")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idSecretaire_rv", referencedColumnName="idSecretaire")
+     *   @ORM\JoinColumn(name="idSecretaire_rv", referencedColumnName="idSecretaire", nullable=false)
      * })
      */
-    private $idsecretaireRv;
+    private $secretaire;
 
 
 
     /**
-     * Get idrv
+     * Get id
      *
      * @return integer
      */
-    public function getIdrv()
+    public function getId()
     {
-        return $this->idrv;
+        return $this->id;
     }
 
 
@@ -103,98 +106,98 @@ class Rendezvous
     }
 
     /**
-     * Set frequencerv
+     * Set frequence
      *
-     * @param string $frequencerv
+     * @param string $frequence
      *
      * @return Rendezvous
      */
-    public function setFrequencerv($frequencerv)
+    public function setFrequence($frequence)
     {
-        $this->frequencerv = $frequencerv;
+        $this->frequence = $frequence;
 
         return $this;
     }
 
     /**
-     * Get frequencerv
+     * Get frequence
      *
      * @return string
      */
-    public function getFrequencerv()
+    public function getFrequence()
     {
-        return $this->frequencerv;
+        return $this->frequence;
     }
 
     /**
-     * Set idpatientRv
+     * Set patient
      *
-     * @param \SamaBundle\Entity\Patient $idpatientRv
+     * @param \SamaBundle\Entity\Patient $patient
      *
      * @return Rendezvous
      */
-    public function setIdpatientRv(\SamaBundle\Entity\Patient $idpatientRv = null)
+    public function setPatient(\SamaBundle\Entity\Patient $patient)
     {
-        $this->idpatientRv = $idpatientRv;
+        $this->patient = $patient;
 
         return $this;
     }
 
     /**
-     * Get idpatientRv
+     * Get patient
      *
      * @return \SamaBundle\Entity\Patient
      */
-    public function getIdpatientRv()
+    public function getPatient()
     {
-        return $this->idpatientRv;
+        return $this->patient;
     }
 
     /**
-     * Set idmedecinRv
+     * Set medecin
      *
-     * @param \SamaBundle\Entity\Medecin $idmedecinRv
+     * @param \SamaBundle\Entity\Medecin $medecin
      *
      * @return Rendezvous
      */
-    public function setIdmedecinRv(\SamaBundle\Entity\Medecin $idmedecinRv = null)
+    public function setMedecin(\SamaBundle\Entity\Medecin $medecin)
     {
-        $this->idmedecinRv = $idmedecinRv;
+        $this->medecin = $medecin;
 
         return $this;
     }
 
     /**
-     * Get idmedecinRv
+     * Get medecin
      *
      * @return \SamaBundle\Entity\Medecin
      */
-    public function getIdmedecinRv()
+    public function getMedecin()
     {
-        return $this->idmedecinRv;
+        return $this->medecin;
     }
 
     /**
-     * Set idsecretaireRv
+     * Set secretaire
      *
-     * @param \SamaBundle\Entity\Secretaire $idsecretaireRv
+     * @param \SamaBundle\Entity\Secretaire $secretaire
      *
      * @return Rendezvous
      */
-    public function setIdsecretaireRv(\SamaBundle\Entity\Secretaire $idsecretaireRv = null)
+    public function setSecretaire(\SamaBundle\Entity\Secretaire $secretaire)
     {
-        $this->idsecretaireRv = $idsecretaireRv;
+        $this->secretaire = $secretaire;
 
         return $this;
     }
 
     /**
-     * Get idsecretaireRv
+     * Get secretaire
      *
      * @return \SamaBundle\Entity\Secretaire
      */
-    public function getIdsecretaireRv()
+    public function getSecretaire()
     {
-        return $this->idsecretaireRv;
+        return $this->secretaire;
     }
 }

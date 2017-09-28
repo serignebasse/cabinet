@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content-wrapper">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+    <h1>Liste des analyses</h1>
+
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Resultat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for analyse in analyses %}
+            <tr>
+                <td><a href="{{ path('analyse_show', { 'id': analyse.id }) }}">{{ analyse.id }}</a></td>
+                <td>{{ analyse.nom }}</td>
+                <td>{{ analyse.type }}</td>
+                <td>{{ analyse.resultat }}</td>
+                <td>
+                    <ul>
+                            <a class="btn btn-secondary btn-sm" href="{{ path('analyse_show',
+                            { 'id': analyse.id }) }}" role="button">voir</a>
+
+                            <a class="btn btn-success btn-sm" href="{{ path('analyse_edit',
+                            { 'id': analyse.id }) }}" role="button">modifier</a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+            <a class="btn btn-success btn-sm" href="{{ path('analyse_new') }}" role="button">Ajouter analyse</a>
+    </ul>
+    </div>
+{% endblock %}

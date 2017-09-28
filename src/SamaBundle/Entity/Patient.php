@@ -20,234 +20,234 @@ class Patient
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idpatient;
+    private $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nomPatient", type="string", length=45, nullable=false)
      */
-    private $nompatient;
+    private $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenomPatient", type="string", length=45, nullable=false)
      */
-    private $prenompatient;
+    private $prenom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sexePatient", type="string", length=45, nullable=true)
+     * @ORM\Column(name="sexePatient", type="string", length=45, nullable=false)
      */
-    private $sexepatient;
+    private $sexe;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="datenaissPatient", type="date", nullable=true)
      */
-    private $datenaisspatient;
+    private $datenaissance;
 
     /**
      * @var string
      *
      * @ORM\Column(name="addressePatient", type="string", length=45, nullable=true)
      */
-    private $addressepatient;
+    private $addresse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telPatient", type="decimal", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="telPatient", type="decimal", precision=10, scale=0, nullable=false)
      */
-    private $telpatient;
+    private $telephone;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="agePatient", type="integer", nullable=true)
      */
-    private $agepatient;
+    private $age;
 
 
 
     /**
-     * Get idpatient
+     * Get id
      *
      * @return integer
      */
-    public function getIdpatient()
+    public function getId()
     {
-        return $this->idpatient;
+        return $this->id;
     }
 
     /**
-     * Set nompatient
+     * Set nom
      *
-     * @param string $nompatient
+     * @param string $nom
      *
      * @return Patient
      */
-    public function setNompatient($nompatient)
+    public function setNom($nom)
     {
-        $this->nompatient = $nompatient;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get nompatient
+     * Get nom
      *
      * @return string
      */
-    public function getNompatient()
+    public function getNom()
     {
-        return $this->nompatient;
+        return $this->nom;
     }
 
     /**
-     * Set prenompatient
+     * Set prenom
      *
-     * @param string $prenompatient
+     * @param string $prenom
      *
      * @return Patient
      */
-    public function setPrenompatient($prenompatient)
+    public function setPrenom($prenom)
     {
-        $this->prenompatient = $prenompatient;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Get prenompatient
+     * Get prenom
      *
      * @return string
      */
-    public function getPrenompatient()
+    public function getPrenom()
     {
-        return $this->prenompatient;
+        return $this->prenom;
     }
 
     /**
-     * Set sexepatient
+     * Set sexe
      *
-     * @param string $sexepatient
+     * @param string $sexe
      *
      * @return Patient
      */
-    public function setSexepatient($sexepatient)
+    public function setSexe($sexe)
     {
-        $this->sexepatient = $sexepatient;
+        $this->sexe = $sexe;
 
         return $this;
     }
 
     /**
-     * Get sexepatient
+     * Get sexe
      *
      * @return string
      */
-    public function getSexepatient()
+    public function getSexe()
     {
-        return $this->sexepatient;
+        return $this->sexe;
     }
 
     /**
-     * Set datenaisspatient
+     * Set datenaissance
      *
-     * @param \DateTime $datenaisspatient
+     * @param \DateTime $datenaissance
      *
      * @return Patient
      */
-    public function setDatenaisspatient($datenaisspatient)
+    public function setDatenaissance($datenaissance)
     {
-        $this->datenaisspatient = $datenaisspatient;
+        $this->datenaissance = $datenaissance;
 
         return $this;
     }
 
     /**
-     * Get datenaisspatient
+     * Get datenaissance
      *
      * @return \DateTime
      */
-    public function getDatenaisspatient()
+    public function getDatenaissance()
     {
-        return $this->datenaisspatient;
+        return $this->datenaissance;
     }
 
     /**
-     * Set addressepatient
+     * Set addresse
      *
-     * @param string $addressepatient
+     * @param string $addresse
      *
      * @return Patient
      */
-    public function setAddressepatient($addressepatient)
+    public function setAddresse($addresse)
     {
-        $this->addressepatient = $addressepatient;
+        $this->addresse = $addresse;
 
         return $this;
     }
 
     /**
-     * Get addressepatient
+     * Get addresse
      *
      * @return string
      */
-    public function getAddressepatient()
+    public function getAddresse()
     {
-        return $this->addressepatient;
+        return $this->addresse;
     }
 
     /**
-     * Set telpatient
+     * Set telephone
      *
-     * @param string $telpatient
+     * @param string $telephone
      *
      * @return Patient
      */
-    public function setTelpatient($telpatient)
+    public function setTelephone($telephone)
     {
-        $this->telpatient = $telpatient;
+        $this->telephone = $telephone;
 
         return $this;
     }
 
     /**
-     * Get telpatient
+     * Get telephone
      *
      * @return string
      */
-    public function getTelpatient()
+    public function getTelephone()
     {
-        return $this->telpatient;
+        return $this->telephone;
     }
 
     /**
-     * Set agepatient
+     * Set age
      *
-     * @param integer $agepatient
+     * @param integer $age
      *
      * @return Patient
      */
-    public function setAgepatient($agepatient)
+    public function setAge($age)
     {
-        $this->agepatient = $agepatient;
+        $this->age = $age;
 
         return $this;
     }
 
     /**
-     * Get agepatient
+     * Get age
      *
      * @return integer
      */
-    public function getAgepatient()
+    public function getAge()
     {
-        return $this->agepatient;
+        return $this->age;
     }
 }

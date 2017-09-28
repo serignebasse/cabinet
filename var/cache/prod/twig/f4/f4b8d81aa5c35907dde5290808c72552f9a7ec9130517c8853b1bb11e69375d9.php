@@ -21,63 +21,70 @@ class __TwigTemplate_d1de0509461f7529ea2b59806abf1705d7ac2e2783cbbae52a15dd0f393
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_366d1575ef35c9a436f8accba0657291b2e86c26c3a90f759f71009d4fbdc8ad = $this->env->getExtension("native_profiler");
-        $__internal_366d1575ef35c9a436f8accba0657291b2e86c26c3a90f759f71009d4fbdc8ad->enter($__internal_366d1575ef35c9a436f8accba0657291b2e86c26c3a90f759f71009d4fbdc8ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "patient/edit.html.twig"));
+        $__internal_7eee306e793785b3d54867aa0a09d3b03f58da1fff29c7dd453b3c2b873cd3fe = $this->env->getExtension("native_profiler");
+        $__internal_7eee306e793785b3d54867aa0a09d3b03f58da1fff29c7dd453b3c2b873cd3fe->enter($__internal_7eee306e793785b3d54867aa0a09d3b03f58da1fff29c7dd453b3c2b873cd3fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "patient/edit.html.twig"));
 
+        // line 2
+        $this->env->getExtension('form')->renderer->setTheme((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), array(0 => "bootstrap_3_layout.html.twig"));
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_366d1575ef35c9a436f8accba0657291b2e86c26c3a90f759f71009d4fbdc8ad->leave($__internal_366d1575ef35c9a436f8accba0657291b2e86c26c3a90f759f71009d4fbdc8ad_prof);
+        $__internal_7eee306e793785b3d54867aa0a09d3b03f58da1fff29c7dd453b3c2b873cd3fe->leave($__internal_7eee306e793785b3d54867aa0a09d3b03f58da1fff29c7dd453b3c2b873cd3fe_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4f0a65ab82f62c472a166bbddd36c0eeb9ee623c92ab1e0b44aada48620a49b2 = $this->env->getExtension("native_profiler");
-        $__internal_4f0a65ab82f62c472a166bbddd36c0eeb9ee623c92ab1e0b44aada48620a49b2->enter($__internal_4f0a65ab82f62c472a166bbddd36c0eeb9ee623c92ab1e0b44aada48620a49b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c3ffe6c772948624cd63d73f75de239312d02493b1a15f6764c60098faaf8f34 = $this->env->getExtension("native_profiler");
+        $__internal_c3ffe6c772948624cd63d73f75de239312d02493b1a15f6764c60098faaf8f34->enter($__internal_c3ffe6c772948624cd63d73f75de239312d02493b1a15f6764c60098faaf8f34_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <link rel=\"stylesheet\" href=\"";
+        echo "<div class=\"content-wrapper\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/bootstrap.css"), "html", null, true);
         echo "\">
-    <h1>Patient edit</h1>
+    <h1>Modifier Patient </h1>
 
     ";
-        // line 7
+        // line 8
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
         ";
-        // line 8
+        // line 9
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Edit\" />
+    <ul>
+
+    <input class=\"btn btn-success btn-sm\" type=\"submit\" value=\"Modifier\" />
     ";
-        // line 10
+        // line 13
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
-
-    <ul>
-        <li>
-            <a href=\"";
+            <a class=\"btn btn-success btn-sm\" href=\"";
         // line 14
         echo $this->env->getExtension('routing')->getPath("patient_index");
-        echo "\">Back to the list</a>
-        </li>
-        <li>
-            ";
-        // line 17
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
+        // line 15
+        echo "\" role=\"button\">Retour</a>
+
+    </ul>
+    <ul>
             ";
         // line 19
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+        echo "
+             <input class=\"btn btn-outline-danger btn-sm\" type=\"submit\" value=\"Supprimer\">
+            ";
+        // line 21
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
-        </li>
+
     </ul>
+</div>
 ";
         
-        $__internal_4f0a65ab82f62c472a166bbddd36c0eeb9ee623c92ab1e0b44aada48620a49b2->leave($__internal_4f0a65ab82f62c472a166bbddd36c0eeb9ee623c92ab1e0b44aada48620a49b2_prof);
+        $__internal_c3ffe6c772948624cd63d73f75de239312d02493b1a15f6764c60098faaf8f34->leave($__internal_c3ffe6c772948624cd63d73f75de239312d02493b1a15f6764c60098faaf8f34_prof);
 
     }
 
@@ -93,29 +100,32 @@ class __TwigTemplate_d1de0509461f7529ea2b59806abf1705d7ac2e2783cbbae52a15dd0f393
 
     public function getDebugInfo()
     {
-        return array (  74 => 19,  69 => 17,  63 => 14,  56 => 10,  51 => 8,  47 => 7,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  80 => 21,  75 => 19,  69 => 15,  67 => 14,  63 => 13,  56 => 9,  52 => 8,  46 => 5,  43 => 4,  37 => 3,  30 => 1,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
-/* */
+/* {% form_theme edit_form 'bootstrap_3_layout.html.twig' %}*/
 /* {% block body %}*/
+/* <div class="content-wrapper">*/
 /*     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">*/
-/*     <h1>Patient edit</h1>*/
+/*     <h1>Modifier Patient </h1>*/
 /* */
 /*     {{ form_start(edit_form) }}*/
 /*         {{ form_widget(edit_form) }}*/
-/*         <input type="submit" value="Edit" />*/
-/*     {{ form_end(edit_form) }}*/
-/* */
 /*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('patient_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete">*/
-/*             {{ form_end(delete_form) }}*/
-/*         </li>*/
+/* */
+/*     <input class="btn btn-success btn-sm" type="submit" value="Modifier" />*/
+/*     {{ form_end(edit_form) }}*/
+/*             <a class="btn btn-success btn-sm" href="{{ path('patient_index')*/
+/*             }}" role="button">Retour</a>*/
+/* */
 /*     </ul>*/
+/*     <ul>*/
+/*             {{ form_start(delete_form) }}*/
+/*              <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">*/
+/*             {{ form_end(delete_form) }}*/
+/* */
+/*     </ul>*/
+/* </div>*/
 /* {% endblock %}*/
 /* */

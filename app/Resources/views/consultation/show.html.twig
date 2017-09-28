@@ -1,36 +1,47 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="content-wrapper ">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
     <h1>Consultation</h1>
 
-    <table>
+    <table class="table table-responsive table-hover">
         <tbody>
             <tr>
-                <th>Idconsult</th>
-                <td>{{ consultation.idconsult }}</td>
+                <th>Id</th>
+                <td>{{ consultation.id }}</td>
             </tr>
             <tr>
-                <th>Dateconsult</th>
-                <td>{% if consultation.dateconsult %}{{ consultation.dateconsult|date('Y-m-d') }}{% endif %}</td>
+                <th>Date</th>
+                <td>{% if consultation.date %}{{ consultation.date|date('Y-m-d') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Diagnostic</th>
                 <td>{{ consultation.diagnostic }}</td>
             </tr>
+            <tr>
+                <th>Traitement</th>
+                <td>{{ consultation.traitement }}</td>
+            </tr>
+            <tr>
+                <th>Decision</th>
+                <td>{{ consultation.decision }}</td>
+            </tr>
         </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('consultation_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('consultation_edit', { 'id': consultation.idconsult }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+
+            <a class="btn btn-success btn-sm" href="{{ path('consultation_index')
+            }}" role="button">Retour</a>
+            <a class="btn btn-success btn-sm" href="{{ path('consultation_edit', { 'id': consultation.id })
+            }}" role="button">Modifier</a>
     </ul>
+    <ul>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+    </ul>
+</div>
 {% endblock %}

@@ -21,25 +21,50 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c0cd291e5012f36d5bfb48c32886b091700b3fdbb728ba57357e9f1af38819a7 = $this->env->getExtension("native_profiler");
-        $__internal_c0cd291e5012f36d5bfb48c32886b091700b3fdbb728ba57357e9f1af38819a7->enter($__internal_c0cd291e5012f36d5bfb48c32886b091700b3fdbb728ba57357e9f1af38819a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "patient/index.html.twig"));
+        $__internal_7312c23bbd6bd96be51c91d9c763fef0d534cba79f1306cb43ca35e1a0ce9008 = $this->env->getExtension("native_profiler");
+        $__internal_7312c23bbd6bd96be51c91d9c763fef0d534cba79f1306cb43ca35e1a0ce9008->enter($__internal_7312c23bbd6bd96be51c91d9c763fef0d534cba79f1306cb43ca35e1a0ce9008_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "patient/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c0cd291e5012f36d5bfb48c32886b091700b3fdbb728ba57357e9f1af38819a7->leave($__internal_c0cd291e5012f36d5bfb48c32886b091700b3fdbb728ba57357e9f1af38819a7_prof);
+        $__internal_7312c23bbd6bd96be51c91d9c763fef0d534cba79f1306cb43ca35e1a0ce9008->leave($__internal_7312c23bbd6bd96be51c91d9c763fef0d534cba79f1306cb43ca35e1a0ce9008_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_fbab940516c0f441ca99c2738b8597e7f26d003e2b4fe642a4f6387123dfdc47 = $this->env->getExtension("native_profiler");
-        $__internal_fbab940516c0f441ca99c2738b8597e7f26d003e2b4fe642a4f6387123dfdc47->enter($__internal_fbab940516c0f441ca99c2738b8597e7f26d003e2b4fe642a4f6387123dfdc47_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_f418a689cbd01b52a094fd5d87d023586876948a9f5eafef4f6f74fa541a4dff = $this->env->getExtension("native_profiler");
+        $__internal_f418a689cbd01b52a094fd5d87d023586876948a9f5eafef4f6f74fa541a4dff->enter($__internal_f418a689cbd01b52a094fd5d87d023586876948a9f5eafef4f6f74fa541a4dff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Liste des patients </h1>
+        echo "    <nav class=\"navbar navbar-expand-lg \">
+    <ul class=\"navbar-nav ml-auto\">
+        <li class=\"nav-item\">
+            <form class=\"form-inline my-2 my-lg-0 mr-lg-2\" method=\"post\" action=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("patient_recherche");
+        echo "\">
+                <div class=\"input-group\">
+                    <input type=\"text\" class=\"form-control\" placeholder=\"nom,prénom,téléphone...\" name=\"mot\">
+                    <span class=\"input-group-btn\">
+                  <button class=\"btn btn-success\" type=\"button\">
+                    <i class=\"fa fa-search\"></i>
+                  </button>
+                </span>
+                </div>
+            </form>
+        </li>
+    </ul>
+    </nav>
 
-    <table>
+<div class=\"content-wrapper\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/bootstrap.css"), "html", null, true);
+        echo "\">
+    <h1>Liste des patients </h1>
+
+    <table class=\"table table-sm table-hover\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -55,62 +80,61 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 40
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["patients"]) ? $context["patients"] : $this->getContext($context, "patients")));
         foreach ($context['_seq'] as $context["_key"] => $context["patient"]) {
-            // line 22
+            // line 41
             echo "            <tr>
                 <td><a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_show", array("id" => $this->getAttribute($context["patient"], "idpatient", array()))), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_show", array("id" => $this->getAttribute($context["patient"], "id", array()))), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "idpatient", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "nompatient", array()), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "nom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "prenompatient", array()), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "prenom", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "sexepatient", array()), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "sexe", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 27
-            if ($this->getAttribute($context["patient"], "datenaisspatient", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["patient"], "datenaisspatient", array()), "Y-m-d"), "html", null, true);
+            // line 46
+            if ($this->getAttribute($context["patient"], "datenaissance", array())) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["patient"], "datenaissance", array()), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 28
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "addressepatient", array()), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "addresse", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 29
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "telpatient", array()), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "telephone", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "agepatient", array()), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, $this->getAttribute($context["patient"], "age", array()), "html", null, true);
             echo "</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href=\"";
-            // line 34
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_show", array("id" => $this->getAttribute($context["patient"], "idpatient", array()))), "html", null, true);
-            echo "\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"";
-            // line 37
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_edit", array("id" => $this->getAttribute($context["patient"], "idpatient", array()))), "html", null, true);
-            echo "\">edit</a>
-                        </li>
+                            <a class=\"btn btn-secondary btn-sm\" href=\"";
+            // line 52
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_show", array("id" => $this->getAttribute($context["patient"], "id", array()))), "html", null, true);
+            // line 53
+            echo "\" role=\"button\">voir</a>
+
+                            <a class=\"btn btn-success btn-sm\" href=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("patient_edit", array("id" => $this->getAttribute($context["patient"], "id", array()))), "html", null, true);
+            // line 56
+            echo "\" role=\"button\">modifier</a>
                     </ul>
                 </td>
             </tr>
@@ -119,21 +143,20 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['patient'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 61
         echo "        </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href=\"";
-        // line 48
+            <a class=\"btn btn-success btn-sm\" href=\"";
+        // line 65
         echo $this->env->getExtension('routing')->getPath("patient_new");
-        echo "\">Create a new entry</a>
-        </li>
+        echo "\"  role=\"button\">Ajouter un patient</a>
     </ul>
+</div>
 ";
         
-        $__internal_fbab940516c0f441ca99c2738b8597e7f26d003e2b4fe642a4f6387123dfdc47->leave($__internal_fbab940516c0f441ca99c2738b8597e7f26d003e2b4fe642a4f6387123dfdc47_prof);
+        $__internal_f418a689cbd01b52a094fd5d87d023586876948a9f5eafef4f6f74fa541a4dff->leave($__internal_f418a689cbd01b52a094fd5d87d023586876948a9f5eafef4f6f74fa541a4dff_prof);
 
     }
 
@@ -149,15 +172,34 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
 
     public function getDebugInfo()
     {
-        return array (  130 => 48,  123 => 43,  111 => 37,  105 => 34,  98 => 30,  94 => 29,  90 => 28,  84 => 27,  80 => 26,  76 => 25,  72 => 24,  66 => 23,  63 => 22,  59 => 21,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  153 => 65,  147 => 61,  137 => 56,  135 => 55,  131 => 53,  129 => 52,  123 => 49,  119 => 48,  115 => 47,  109 => 46,  105 => 45,  101 => 44,  97 => 43,  91 => 42,  88 => 41,  84 => 40,  63 => 22,  45 => 7,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
+/*     <nav class="navbar navbar-expand-lg ">*/
+/*     <ul class="navbar-nav ml-auto">*/
+/*         <li class="nav-item">*/
+/*             <form class="form-inline my-2 my-lg-0 mr-lg-2" method="post" action="{{ path('patient_recherche')}}">*/
+/*                 <div class="input-group">*/
+/*                     <input type="text" class="form-control" placeholder="nom,prénom,téléphone..." name="mot">*/
+/*                     <span class="input-group-btn">*/
+/*                   <button class="btn btn-success" type="button">*/
+/*                     <i class="fa fa-search"></i>*/
+/*                   </button>*/
+/*                 </span>*/
+/*                 </div>*/
+/*             </form>*/
+/*         </li>*/
+/*     </ul>*/
+/*     </nav>*/
+/* */
+/* <div class="content-wrapper">*/
+/*     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">*/
 /*     <h1>Liste des patients </h1>*/
 /* */
-/*     <table>*/
+/*     <table class="table table-sm table-hover">*/
 /*         <thead>*/
 /*             <tr>*/
 /*                 <th>Id</th>*/
@@ -174,22 +216,21 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
 /*         <tbody>*/
 /*         {% for patient in patients %}*/
 /*             <tr>*/
-/*                 <td><a href="{{ path('patient_show', { 'id': patient.idpatient }) }}">{{ patient.idpatient }}</a></td>*/
-/*                 <td>{{ patient.nompatient }}</td>*/
-/*                 <td>{{ patient.prenompatient }}</td>*/
-/*                 <td>{{ patient.sexepatient }}</td>*/
-/*                 <td>{% if patient.datenaisspatient %}{{ patient.datenaisspatient|date('Y-m-d') }}{% endif %}</td>*/
-/*                 <td>{{ patient.addressepatient }}</td>*/
-/*                 <td>{{ patient.telpatient }}</td>*/
-/*                 <td>{{ patient.agepatient }}</td>*/
+/*                 <td><a href="{{ path('patient_show', { 'id': patient.id }) }}">{{ patient.id }}</a></td>*/
+/*                 <td>{{ patient.nom }}</td>*/
+/*                 <td>{{ patient.prenom }}</td>*/
+/*                 <td>{{ patient.sexe }}</td>*/
+/*                 <td>{% if patient.datenaissance %}{{ patient.datenaissance|date('Y-m-d') }}{% endif %}</td>*/
+/*                 <td>{{ patient.addresse }}</td>*/
+/*                 <td>{{ patient.telephone }}</td>*/
+/*                 <td>{{ patient.age }}</td>*/
 /*                 <td>*/
 /*                     <ul>*/
-/*                         <li>*/
-/*                             <a href="{{ path('patient_show', { 'id': patient.idpatient }) }}">show</a>*/
-/*                         </li>*/
-/*                         <li>*/
-/*                             <a href="{{ path('patient_edit', { 'id': patient.idpatient }) }}">edit</a>*/
-/*                         </li>*/
+/*                             <a class="btn btn-secondary btn-sm" href="{{ path('patient_show', { 'id': patient.id*/
+/*                             })}}" role="button">voir</a>*/
+/* */
+/*                             <a class="btn btn-success btn-sm" href="{{ path('patient_edit', { 'id': patient.id*/
+/*                             }) }}" role="button">modifier</a>*/
 /*                     </ul>*/
 /*                 </td>*/
 /*             </tr>*/
@@ -198,9 +239,8 @@ class __TwigTemplate_3f0d26b31079561ef810bf552b53bac5a8faa3ed8281c3fd79a9e5f9664
 /*     </table>*/
 /* */
 /*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('patient_new') }}">Create a new entry</a>*/
-/*         </li>*/
+/*             <a class="btn btn-success btn-sm" href="{{ path('patient_new') }}"  role="button">Ajouter un patient</a>*/
 /*     </ul>*/
+/* </div>*/
 /* {% endblock %}*/
 /* */
